@@ -7,13 +7,18 @@
   --font-sans: 'Poppins', sans-serif;
   --font-main: 'Roboto', sans-serif;
 }
-body.dark {
-  --bg: #121212;
-  --light-bg: #1e1e1e;
-  --secondary: #eee;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
-* { box-sizing: border-box; margin: 0; padding: 0; }
-html, body { height: 100%; margin: 0; }
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
 body {
   font-family: var(--font-main);
   color: var(--secondary);
@@ -22,23 +27,48 @@ body {
   min-height: 100vh;
   padding: 0;
 }
+
 body::before {
   content: "";
   position: fixed;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: linear-gradient(270deg, var(--primary), #ff9671, var(--bg), #ffe5b4, #ff9671, var(--primary));
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    270deg,
+    var(--primary),
+    #ff9671,
+    var(--bg),
+    #ffe5b4,
+    #ff9671,
+    var(--primary)
+  );
   background-size: 600% 600%;
   animation: gradientBG 20s ease infinite;
   z-index: -2;
 }
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: url('https://www.transparenttextures.com/patterns/asfalt-dark.png');
+  opacity: 0.05;
+  z-index: -2;
+}
+
 #particles {
   position: fixed;
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
   z-index: -3;
   pointer-events: none;
 }
+
 .container {
   width: 90%;
   max-width: 800px;
@@ -50,15 +80,18 @@ body::before {
   padding: 2rem 1rem;
   margin: 2rem auto;
 }
+
 @keyframes gradientBG {
-  0% { background-position: 25% 50%; }
-  50% { background-position: 75% 50%; }
+  0%   { background-position: 25% 50%; }
+  50%  { background-position: 75% 50%; }
   100% { background-position: 25% 50%; }
 }
+
 @keyframes fadeIn {
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
 header {
   background: linear-gradient(135deg, var(--primary), #ff9671);
   color: #fff;
@@ -66,54 +99,147 @@ header {
   padding: 2.5rem 1rem;
   font-family: var(--font-sans);
 }
-nav { display: flex; justify-content: center; flex-wrap: wrap; gap: 1rem; margin-top: 1rem; }
+
+header h1 {
+  font-size: 2.75rem;
+  margin-bottom: 0.5rem;
+}
+
+header p {
+  font-size: 1.125rem;
+  opacity: 0.9;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
 nav a {
   color: #fff;
   text-decoration: none;
   font-weight: 500;
-  padding: 0.25rem 0.5rem;
+  position: relative;
+  padding-bottom: 2px;
 }
-section { padding: 2rem 1.5rem; }
-.card {
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+section {
+  padding: 2rem 1.5rem;
+}
+
+section:nth-of-type(even) {
+  background: #faf9f8;
+}
+
+h2 {
+  font-family: var(--font-sans);
+  font-size: 1.75rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--primary);
+  margin-top: 6px;
+  border-radius: 2px;
+}
+
+.contact-list, .skills-list, .cert-list, .prog-list, .sys-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.contact-list li {
+  width: 100%;
+}
+
+.contact-list a {
+  color: var(--secondary);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+article.card {
   background: var(--light-bg);
   border-radius: 8px;
   box-shadow: 0 4px 12px var(--shadow);
-  padding: 1rem;
+  padding: 1.25rem;
   margin-bottom: 1rem;
+  transition: transform 0.3s;
 }
-ul { list-style: none; padding: 0; }
-ul li {
+
+article.card:hover {
+  transform: translateY(-4px);
+}
+
+article.card h3 {
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  color: var(--secondary);
+  margin-bottom: 0.25rem;
+}
+
+article.card p em {
+  color: #777;
+  font-style: normal;
+  font-size: 0.95rem;
+}
+
+article.card ul {
+  margin-top: 0.75rem;
+  padding-left: 1.2rem;
+}
+
+article.card ul li {
+  margin-bottom: 0.5rem;
+}
+
+.skills-list li, .cert-list li, .prog-list li, .sys-list li {
   background: var(--bg);
   padding: 0.5rem 0.75rem;
   border-radius: 6px;
   font-size: 0.9rem;
-  margin-bottom: 0.5rem;
   box-shadow: 0 2px 6px var(--shadow);
 }
-blockquote {
-  font-style: italic;
-  border-left: 4px solid var(--primary);
-  padding-left: 1rem;
-  color: #666;
-}
+
 footer {
   text-align: center;
-  padding: 1rem;
+  padding: 1.5rem;
   background: #fafcfc;
   font-size: 0.9rem;
   color: #555;
 }
+
 @media (max-width: 700px) {
-  nav { flex-direction: column; align-items: center; }
-}
-@media print {
-  body::before, #particles, nav, footer, #theme-toggle {
-    display: none !important;
+  header h1 {
+    font-size: 2rem;
   }
-  .container {
-    box-shadow: none;
-    background: white;
-    margin: 0;
-    padding: 0;
+  nav {
+    flex-direction: column;
+    gap: 0.75rem;
   }
 }
