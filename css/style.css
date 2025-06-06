@@ -19,13 +19,26 @@ html, body {
 }
 body {
   font-family: var(--font-main);
-  background: linear-gradient(270deg, var(--primary), #ff9671, var(--bg), var(--primary));
-  background-size: 800% 800%;
-  animation: gradientBG 15s ease infinite;
+  color: var(--secondary);
+  position: relative;
+  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--secondary);
+  padding: 2rem 1rem;
+}
+/* Full-screen animated background behind everything */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(270deg, var(--primary), #ff9671, var(--bg), var(--primary));
+  background-size: 800% 800%;
+  animation: gradientBG 15s ease infinite;
+  z-index: -1;
 }
 .container {
   width: 90%;
@@ -92,11 +105,7 @@ h2::after {
   margin-top: 6px;
   border-radius: 2px;
 }
-.contact-list,
-.skills-list,
-.cert-list,
-.prog-list,
-.sys-list {
+.contact-list, .skills-list, .cert-list, .prog-list, .sys-list {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
@@ -126,10 +135,7 @@ article.card p em {
 }
 article.card ul { margin-top: 0.75rem; padding-left: 1.2rem; }
 article.card ul li { margin-bottom: 0.5rem; }
-.skills-list li,
-.cert-list li,
-.prog-list li,
-.sys-list li {
+.skills-list li, .cert-list li, .prog-list li, .sys-list li {
   background: var(--bg);
   padding: 0.5rem 0.75rem;
   border-radius: 6px;
