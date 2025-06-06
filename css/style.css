@@ -13,46 +13,38 @@
   margin: 0;
   padding: 0;
 }
+html, body {
+  height: 100%;
+  margin: 0;
+}
 body {
   font-family: var(--font-main);
   background: linear-gradient(270deg, var(--primary), #ff9671, var(--bg), var(--primary));
   background-size: 800% 800%;
   animation: gradientBG 15s ease infinite;
-  color: var(--secondary);
-  line-height: 1.6;
-  padding: 2rem 1rem;
   display: flex;
+  align-items: center;
   justify-content: center;
+  color: var(--secondary);
 }
 .container {
+  width: 90%;
   max-width: 800px;
-  width: 100%;
   background: var(--light-bg);
   border-radius: 12px;
   box-shadow: 0 8px 16px var(--shadow);
   overflow: hidden;
   animation: fadeIn 1s ease;
-}
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  padding: 2rem 1rem;
 }
 @keyframes gradientBG {
-  0% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-  100% {
-    background-position: 0% 50%;
-  }
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 header {
   background: linear-gradient(135deg, var(--primary), #ff9671);
@@ -61,20 +53,9 @@ header {
   padding: 2.5rem 1rem;
   font-family: var(--font-sans);
 }
-header h1 {
-  font-size: 2.75rem;
-  margin-bottom: 0.5rem;
-}
-header p {
-  font-size: 1.125rem;
-  opacity: 0.9;
-}
-nav {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin-top: 1rem;
-}
+header h1 { font-size: 2.75rem; margin-bottom: 0.5rem; }
+header p { font-size: 1.125rem; opacity: 0.9; }
+nav { display: flex; justify-content: center; gap: 1.5rem; margin-top: 1rem; }
 nav a {
   color: #fff;
   text-decoration: none;
@@ -92,15 +73,9 @@ nav a::after {
   left: 0;
   transition: width 0.3s;
 }
-nav a:hover::after {
-  width: 100%;
-}
-section {
-  padding: 2rem 1.5rem;
-}
-section:nth-of-type(even) {
-  background: #faf9f8;
-}
+nav a:hover::after { width: 100%; }
+section { padding: 2rem 1.5rem; }
+section:nth-of-type(even) { background: #faf9f8; }
 h2 {
   font-family: var(--font-sans);
   font-size: 1.75rem;
@@ -127,14 +102,8 @@ h2::after {
   flex-wrap: wrap;
   gap: 0.75rem;
 }
-.contact-list li {
-  width: 100%;
-}
-.contact-list a {
-  color: var(--secondary);
-  text-decoration: none;
-  font-weight: 500;
-}
+.contact-list li { width: 100%; }
+.contact-list a { color: var(--secondary); text-decoration: none; font-weight: 500; }
 article.card {
   background: var(--light-bg);
   border-radius: 8px;
@@ -143,9 +112,7 @@ article.card {
   margin-bottom: 1rem;
   transition: transform 0.3s;
 }
-article.card:hover {
-  transform: translateY(-4px);
-}
+article.card:hover { transform: translateY(-4px); }
 article.card h3 {
   font-family: var(--font-sans);
   font-size: 1.25rem;
@@ -157,13 +124,8 @@ article.card p em {
   font-style: normal;
   font-size: 0.95rem;
 }
-article.card ul {
-  margin-top: 0.75rem;
-  padding-left: 1.2rem;
-}
-article.card ul li {
-  margin-bottom: 0.5rem;
-}
+article.card ul { margin-top: 0.75rem; padding-left: 1.2rem; }
+article.card ul li { margin-bottom: 0.5rem; }
 .skills-list li,
 .cert-list li,
 .prog-list li,
@@ -182,11 +144,6 @@ footer {
   color: #555;
 }
 @media (max-width: 700px) {
-  header h1 {
-    font-size: 2rem;
-  }
-  nav {
-    flex-direction: column;
-    gap: 0.75rem;
-  }
+  header h1 { font-size: 2rem; }
+  nav { flex-direction: column; gap: 0.75rem; }
 }
