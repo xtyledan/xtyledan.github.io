@@ -1,30 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Tyler Daniels — Résumé</title>
-
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet" />
-
-  <!-- Devicon Icons -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
-
-  <!-- AOS Animation -->
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <!-- External CSS -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
   <canvas id="particles"></canvas>
 
-  <button id="theme-toggle">🌓 Toggle Dark Mode</button>
-
   <div class="container">
     <header>
-      <h1><span id="typing"></span></h1>
+      <h1>Tyler Daniels</h1>
       <p>IT Equipment Coordinator | Field Technician | Aspiring Software Engineer</p>
       <nav>
         <a href="#experience">Experience</a>
@@ -33,83 +23,79 @@
         <a href="#certifications">Certs</a>
         <a href="#programming-languages">Coding</a>
         <a href="#systems">Systems</a>
-        <a href="#projects">Projects</a>
-        <a href="#testimonials">Testimonials</a>
-        <a href="#contact">Contact</a>
       </nav>
     </header>
 
-    <section id="experience" data-aos="fade-up">
+    <section id="experience">
       <h2>Experience</h2>
       <article class="card">
         <h3>IT Equipment Coordinator @ Amazon</h3>
         <p><em>Beaumont, CA · Sep 2022 – Present</em></p>
         <ul>
           <li>Reduced equipment allocation time by 30% and increased uptime by 15% via custom inventory system.</li>
+          <li>Built an automated RMA tracker, cutting warranty repair downtime by 40% and saving 100+ hrs monthly.</li>
+          <li>Standardized vendor procedures to lower repair costs 25% without sacrificing quality.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Field Technician @ Twisted Kelp</h3>
+        <p><em>Los Angeles, CA · Jan 2018 – Aug 2022</em></p>
+        <ul>
+          <li>Boosted uptime 20% through predictive maintenance strategies.</li>
+          <li>Introduced automated data capture tools for 25% faster reporting.</li>
+          <li>Co-developed rapid-response and real-time monitoring with CALFIRE for emergency deployments.</li>
         </ul>
       </article>
     </section>
 
-    <section id="education" data-aos="fade-up">
+    <section id="education">
       <h2>Education</h2>
       <article class="card">
         <h3>BS in Computer Science</h3>
-        <p><em>SNHU · Jan 2024 – Oct 2025 (Exp.)</em></p>
+        <p><em>Southern New Hampshire University · Jan 2024 – Oct 2025 (Exp.)</em></p>
+      </article>
+      <article class="card">
+        <h3>AS in Computer Science</h3>
+        <p><em>Southern New Hampshire University · Jan 2022 – Jan 2024</em></p>
       </article>
     </section>
 
-    <section id="skills" data-aos="fade-up">
+    <section id="skills">
       <h2>Skills</h2>
       <ul class="skills-list">
         <li>Software Design</li>
         <li>Process Automation</li>
+        <li>Data Analysis</li>
+        <li>Troubleshooting</li>
+        <li>Issue Resolution</li>
       </ul>
     </section>
 
-    <section id="certifications" data-aos="fade-up">
+    <section id="certifications">
       <h2>Certifications</h2>
       <ul class="cert-list">
-        <li>OSHA Training</li>
+        <li>OSHA Outreach Training</li>
+        <li>Member, The National Society of Leadership and Success</li>
       </ul>
     </section>
 
-    <section id="programming-languages" data-aos="fade-up">
+    <section id="programming-languages">
       <h2>Programming Languages</h2>
       <ul class="prog-list">
-        <li><i class="devicon-python-plain"></i> Python</li>
-        <li><i class="devicon-java-plain"></i> Java</li>
+        <li>Python</li>
+        <li>C++</li>
+        <li>Java</li>
       </ul>
     </section>
 
-    <section id="systems" data-aos="fade-up">
+    <section id="systems">
       <h2>Familiar Systems</h2>
       <ul class="sys-list">
-        <li><i class="devicon-aws-plain-wordmark"></i> AWS</li>
-        <li><i class="devicon-linux-plain"></i> Linux</li>
+        <li>Git</li>
+        <li>AWS</li>
+        <li>Linux</li>
+        <li>Agile</li>
       </ul>
-    </section>
-
-    <section id="projects" data-aos="fade-up">
-      <h2>Projects</h2>
-      <article class="card">
-        <h3>Inventory Tracker</h3>
-        <p>Web app to manage IT inventory at Amazon.</p>
-        <a href="#">View Code</a>
-      </article>
-    </section>
-
-    <section id="testimonials" data-aos="fade-up">
-      <h2>Testimonials</h2>
-      <blockquote>
-        "Tyler's scripts saved us 100+ hours monthly!" – Manager @ Amazon
-      </blockquote>
-    </section>
-
-    <section id="contact" data-aos="fade-up">
-      <h2>Contact</h2>
-      <p>Email: <a href="mailto:you@example.com">you@example.com</a></p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile">linkedin.com/in/yourprofile</a></p>
-      <a href="Tyler_Daniels_Resume.pdf" download class="btn">Download PDF</a>
     </section>
 
     <footer>
@@ -117,44 +103,24 @@
     </footer>
   </div>
 
-  <!-- Scripts -->
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- Particle animation -->
   <script>
-    AOS.init();
-
-    // Dark mode toggle
-    document.getElementById("theme-toggle").onclick = () => {
-      document.body.classList.toggle("dark");
-    };
-
-    // Typing animation
-    const roles = ["IT Equipment Coordinator", "Field Technician", "Aspiring Software Engineer"];
-    let i = 0, j = 0, deleting = false;
-    setInterval(() => {
-      const el = document.getElementById("typing");
-      if (!el) return;
-      el.textContent = roles[i].substring(0, j);
-      if (!deleting) {
-        j++;
-        if (j > roles[i].length) deleting = true;
-      } else {
-        j--;
-        if (j === 0) {
-          i = (i + 1) % roles.length;
-          deleting = false;
-        }
-      }
-    }, 100);
-
-    // Particles background
     const canvas = document.getElementById('particles');
     const ctx = canvas.getContext('2d');
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
     const particles = [];
-    for (let i = 0; i < 75; i++) {
-      particles.push({ x: Math.random() * canvas.width, y: Math.random() * canvas.height, r: Math.random() * 2 + 1, dx: Math.random() * 0.5 - 0.25, dy: Math.random() * 0.5 - 0.25 });
+    const particleCount = 75;
+
+    for (let i = 0; i < particleCount; i++) {
+      particles.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        radius: Math.random() * 2 + 1,
+        dx: Math.random() * 0.5 - 0.25,
+        dy: Math.random() * 0.5 - 0.25,
+      });
     }
 
     function animate() {
@@ -162,14 +128,18 @@
       ctx.fillStyle = 'rgba(255, 255, 255, 0.1)';
       particles.forEach(p => {
         ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+        ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
         ctx.fill();
-        p.x += p.dx; p.y += p.dy;
-        if (p.x < 0) p.x = canvas.width; if (p.x > canvas.width) p.x = 0;
-        if (p.y < 0) p.y = canvas.height; if (p.y > canvas.height) p.y = 0;
+        p.x += p.dx;
+        p.y += p.dy;
+        if (p.x < 0) p.x = canvas.width;
+        if (p.x > canvas.width) p.x = 0;
+        if (p.y < 0) p.y = canvas.height;
+        if (p.y > canvas.height) p.y = 0;
       });
       requestAnimationFrame(animate);
     }
+
     animate();
 
     window.addEventListener('resize', () => {
