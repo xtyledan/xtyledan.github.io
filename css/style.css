@@ -15,7 +15,9 @@
 }
 body {
   font-family: var(--font-main);
-  background: var(--bg);
+  background: linear-gradient(270deg, var(--primary), #ff9671, var(--bg), var(--primary));
+  background-size: 800% 800%;
+  animation: gradientBG 15s ease infinite;
   color: var(--secondary);
   line-height: 1.6;
   padding: 2rem 1rem;
@@ -39,6 +41,17 @@ body {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
   }
 }
 header {
