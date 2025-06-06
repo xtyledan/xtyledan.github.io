@@ -1,0 +1,179 @@
+/* CSS Variables for Theme */
+:root {
+  --primary: #ff6f61;
+  --secondary: #333;
+  --bg: #fdfcfa;
+  --light-bg: #fff;
+  --shadow: rgba(0, 0, 0, 0.1);
+  --font-sans: 'Poppins', sans-serif;
+  --font-main: 'Roboto', sans-serif;
+}
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: var(--font-main);
+  background: var(--bg);
+  color: var(--secondary);
+  line-height: 1.6;
+  padding: 2rem 1rem;
+  display: flex;
+  justify-content: center;
+}
+.container {
+  max-width: 800px;
+  width: 100%;
+  background: var(--light-bg);
+  border-radius: 12px;
+  box-shadow: 0 8px 16px var(--shadow);
+  overflow: hidden;
+  animation: fadeIn 1s ease;
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+header {
+  background: linear-gradient(135deg, var(--primary), #ff9671);
+  color: #fff;
+  text-align: center;
+  padding: 2.5rem 1rem;
+  font-family: var(--font-sans);
+}
+header h1 {
+  font-size: 2.75rem;
+  margin-bottom: 0.5rem;
+}
+header p {
+  font-size: 1.125rem;
+  opacity: 0.9;
+}
+nav {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+nav a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  padding-bottom: 2px;
+}
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  background: #fff;
+  bottom: 0;
+  left: 0;
+  transition: width 0.3s;
+}
+nav a:hover::after {
+  width: 100%;
+}
+section {
+  padding: 2rem 1.5rem;
+}
+section:nth-of-type(even) {
+  background: #faf9f8;
+}
+h2 {
+  font-family: var(--font-sans);
+  font-size: 1.75rem;
+  color: var(--primary);
+  margin-bottom: 1rem;
+  position: relative;
+}
+h2::after {
+  content: '';
+  display: block;
+  width: 60px;
+  height: 4px;
+  background: var(--primary);
+  margin-top: 6px;
+  border-radius: 2px;
+}
+.contact-list,
+.skills-list,
+.cert-list,
+.prog-list,
+.sys-list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+.contact-list li {
+  width: 100%;
+}
+.contact-list a {
+  color: var(--secondary);
+  text-decoration: none;
+  font-weight: 500;
+}
+article.card {
+  background: var(--light-bg);
+  border-radius: 8px;
+  box-shadow: 0 4px 12px var(--shadow);
+  padding: 1.25rem;
+  margin-bottom: 1rem;
+  transition: transform 0.3s;
+}
+article.card:hover {
+  transform: translateY(-4px);
+}
+article.card h3 {
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  color: var(--secondary);
+  margin-bottom: 0.25rem;
+}
+article.card p em {
+  color: #777;
+  font-style: normal;
+  font-size: 0.95rem;
+}
+article.card ul {
+  margin-top: 0.75rem;
+  padding-left: 1.2rem;
+}
+article.card ul li {
+  margin-bottom: 0.5rem;
+}
+.skills-list li,
+.cert-list li,
+.prog-list li,
+.sys-list li {
+  background: var(--bg);
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  box-shadow: 0 2px 6px var(--shadow);
+}
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: #fafcfc;
+  font-size: 0.9rem;
+  color: #555;
+}
+@media (max-width: 700px) {
+  header h1 {
+    font-size: 2rem;
+  }
+  nav {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+}
