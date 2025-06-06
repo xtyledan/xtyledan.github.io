@@ -2,145 +2,113 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Tyler Daniels — Résumé</title>
-  <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, sans-serif;
-      max-width: 700px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-      line-height: 1.6;
-      color: #333;
-    }
-    header, section, footer {
-      margin-bottom: 2rem;
-    }
-    header h1 {
-      font-size: 2.5rem;
-      margin: 0;
-    }
-    .subtitle {
-      color: #555;
-    }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    .skills-list, .cert-list, .prog-list, .sys-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-    }
-    .skills-list li, .cert-list li, .prog-list li, .sys-list li {
-      background: #f0f0f0;
-      padding: 0.3rem 0.6rem;
-      border-radius: 4px;
-      font-size: 0.9rem;
-    }
-    article h3 {
-      margin-bottom: 0.3rem;
-    }
-    article p em {
-      color: #555;
-      font-style: normal;
-    }
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 2rem;
-      }
-    }
-  </style>
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <!-- External CSS -->
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header>
-    <h1>Tyler Daniels</h1>
-    <p class="subtitle">IT Equipment Coordinator | Field Technician | Aspiring Software Engineer</p>
-  </header>
+  <div class="container">
+    <header>
+      <h1>Tyler Daniels</h1>
+      <p>IT Equipment Coordinator | Field Technician | Aspiring Software Engineer</p>
+      <nav>
+        <a href="#contact">Contact</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#certifications">Certs</a>
+        <a href="#programming-languages">Coding</a>
+        <a href="#systems">Systems</a>
+      </nav>
+    </header>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <ul>
-      <li>Phone: (840) 219-7736</li>
-      <li>Email: <a href="mailto:Tdaniels3526@gmail.com">Tdaniels3526@gmail.com</a></li>
-      <li>GitHub: <a href="https://github.com/xtyledan">github.com/xtyledan</a></li>
-    </ul>
-  </section>
-
-  <section id="experience">
-    <h2>Experience</h2>
-    <article>
-      <h3>IT Equipment Coordinator @ Amazon, Beaumont CA</h3>
-      <p><em>September 2022 – Present</em></p>
-      <ul>
-        <li>Developed and implemented an inventory management system, reducing equipment allocation time by 30% and increasing uptime by 15%.</li>
-        <li>Designed and deployed an automated RMA tracking system, decreasing warranty repair downtime by 40% and saving over 100 monthly administrative hours.</li>
-        <li>Optimized vendor selection and standardized repair procedures, resulting in a 25% reduction in repair costs while maintaining quality.</li>
+    <section id="contact">
+      <h2>Contact</h2>
+      <ul class="contact-list">
+        <li>📞 (840) 219-7736</li>
+        <li>✉️ <a href="mailto:Tdaniels3526@gmail.com">Tdaniels3526@gmail.com</a></li>
+        <li>🐙 <a href="https://github.com/xtyledan" target="_blank">github.com/xtyledan</a></li>
       </ul>
-    </article>
-    <article>
-      <h3>Field Technician @ Twisted Kelp, Los Angeles CA</h3>
-      <p><em>January 2018 – August 2022</em></p>
-      <ul>
-        <li>Increased equipment uptime by 20% through predictive maintenance strategies, improving reliability and cost-effectiveness.</li>
-        <li>Introduced automated data capture tools, enhancing workflow efficiency and data accuracy.</li>
-        <li>Collaborated with CALFIRE to develop rapid-response protocols and real-time monitoring systems for emergency resource deployment.</li>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+      <article class="card">
+        <h3>IT Equipment Coordinator @ Amazon</h3>
+        <p><em>Beaumont, CA · Sep 2022 – Present</em></p>
+        <ul>
+          <li>Reduced equipment allocation time by 30% and increased uptime by 15% via custom inventory system.</li>
+          <li>Built an automated RMA tracker, cutting warranty repair downtime by 40% and saving 100+ hrs monthly.</li>
+          <li>Standardized vendor procedures to lower repair costs 25% without sacrificing quality.</li>
+        </ul>
+      </article>
+      <article class="card">
+        <h3>Field Technician @ Twisted Kelp</h3>
+        <p><em>Los Angeles, CA · Jan 2018 – Aug 2022</em></p>
+        <ul>
+          <li>Boosted uptime 20% through predictive maintenance strategies.</li>
+          <li>Introduced automated data capture tools for 25% faster reporting.</li>
+          <li>Co-developed rapid-response and real-time monitoring with CALFIRE for emergency deployments.</li>
+        </ul>
+      </article>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+      <article class="card">
+        <h3>BS in Computer Science</h3>
+        <p><em>Southern New Hampshire University · Jan 2024 – Oct 2025 (Exp.)</em></p>
+      </article>
+      <article class="card">
+        <h3>AS in Computer Science</h3>
+        <p><em>Southern New Hampshire University · Jan 2022 – Jan 2024</em></p>
+      </article>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+      <ul class="skills-list">
+        <li>Software Design</li>
+        <li>Process Automation</li>
+        <li>Data Analysis</li>
+        <li>Troubleshooting</li>
+        <li>Issue Resolution</li>
       </ul>
-    </article>
-  </section>
+    </section>
 
-  <section id="education">
-    <h2>Education</h2>
-    <article>
-      <h3>Bachelor of Science in Computer Science</h3>
-      <p><em>Southern New Hampshire University, Jan 2024 – Oct 2025 (Projected)</em></p>
-    </article>
-    <article>
-      <h3>Associate of Science in Computer Science</h3>
-      <p><em>Southern New Hampshire University, Jan 2022 – Jan 2024</em></p>
-    </article>
-  </section>
+    <section id="certifications">
+      <h2>Certifications</h2>
+      <ul class="cert-list">
+        <li>OSHA Outreach Training</li>
+        <li>Member, The National Society of Leadership and Success</li>
+      </ul>
+    </section>
 
-  <section id="skills">
-    <h2>Skills</h2>
-    <ul class="skills-list">
-      <li>Software Design</li>
-      <li>Process Automation</li>
-      <li>Data Analysis</li>
-      <li>Troubleshooting</li>
-      <li>Issue Resolution</li>
-    </ul>
-  </section>
+    <section id="programming-languages">
+      <h2>Programming Languages</h2>
+      <ul class="prog-list">
+        <li>Python</li>
+        <li>C++</li>
+        <li>Java</li>
+      </ul>
+    </section>
 
-  <section id="certifications">
-    <h2>Certifications</h2>
-    <ul class="cert-list">
-      <li>OSHA Outreach Training</li>
-      <li>Member of The National Society of Leadership and Success</li>
-    </ul>
-  </section>
+    <section id="systems">
+      <h2>Familiar Systems</h2>
+      <ul class="sys-list">
+        <li>Git</li>
+        <li>AWS</li>
+        <li>Linux</li>
+        <li>Agile</li>
+      </ul>
+    </section>
 
-  <section id="programming-languages">
-    <h2>Programming Languages</h2>
-    <ul class="prog-list">
-      <li>Python</li>
-      <li>C++</li>
-      <li>Java</li>
-    </ul>
-  </section>
-
-  <section id="systems">
-    <h2>Familiar Systems</h2>
-    <ul class="sys-list">
-      <li>Git</li>
-      <li>AWS</li>
-      <li>Linux</li>
-      <li>Agile Methodologies</li>
-    </ul>
-  </section>
-
-  <footer>
-    <p>© 2025 Tyler Daniels</p>
-  </footer>
+    <footer>
+      <p>© 2025 Tyler Daniels</p>
+    </footer>
+  </div>
 </body>
 </html>
