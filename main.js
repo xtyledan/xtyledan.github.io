@@ -182,3 +182,51 @@ function initCardEffects() {
         });
     });
 }
+// Handle mobile menu
+document.addEventListener('DOMContentLoaded', () => {
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
+    });
+
+    // Optimize particle animation for mobile
+    const isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+    if (isMobile) {
+        const canvas = document.getElementById('particles');
+        const ctx = canvas.getContext('2d');
+        // Reduce particle count on mobile
+        const particleCount = 30; // Reduced from 75
+        // Update existing particles array
+        particles.length = 0;
+        for (let i = 0; i < particleCount; i++) {
+            particles.push({
+                x: Math.random() * canvas.width,
+                y: Math.random() * canvas.height,
+                radius: Math.random() * 1.5 + 0.5, // Smaller particles
+                dx: Math.random() * 0.3 - 0.15, // Slower movement
+                dy: Math.random() * 0.3 - 0.15
+            });
+        }
+    }
+});
+
+// Handle window resize
+let resizeTimeout;
+window.addEventListener('resize', () => {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(() => {
+        // Update canvas dimensions
+        const canvas = document.getElementById('particles');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }, 250);
+});

@@ -1,3 +1,186 @@
+/* Base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header styles */
+header {
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+}
+
+/* Navigation */
+nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem 0;
+}
+
+nav a {
+    color: #333;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+/* Sections */
+section {
+    padding: 2rem 1rem;
+    margin-bottom: 2rem;
+}
+
+/* Experience section styles */
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.experience-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.experience-header {
+    margin-bottom: 1rem;
+}
+
+.job-title-container {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.job-title-container h3 {
+    font-size: 1.1rem;
+    color: #333;
+    margin: 0;
+}
+
+.experience-date {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* Education grid */
+.education-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.education-card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Skills section */
+.skills__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.skills__content {
+    padding: 1rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.skills__data {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 1rem;
+}
+
+/* Projects section */
+.card {
+    background: #fff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Clubs section */
+.clubs__container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.clubs__content {
+    background: #fff;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+    
+    nav {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    nav a {
+        width: 100%;
+        text-align: center;
+    }
+    
+    .skills__data {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+}
+
+/* Canvas positioning */
+#particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 2rem;
+    margin-top: 2rem;
+}
 :root {
   --primary: #ff6f61;
   --secondary: #333;
@@ -468,12 +651,6 @@ h2 .fas {
     font-size: 1.4rem;
 }
 
-.company-logo {
-    width: 24px;
-    height: 24px;
-    object-fit: contain;
-}
-
 .experience-header {
     padding: 1.5rem;
     background: rgba(0, 0, 0, 0.05);
@@ -697,4 +874,82 @@ h2 .fas {
 
 .card a i {
   font-size: 1.2rem;
+}
+/* Social Section */
+.social-section {
+    padding: 2rem 1rem;
+}
+
+.social-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.social-card {
+    text-decoration: none;
+    color: inherit;
+    background: #fff;
+    border-radius: 12px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.social-content {
+    text-align: center;
+}
+
+.social-content i {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.social-content h3 {
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.social-content p {
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.social-username {
+    display: block;
+    color: #888;
+    font-size: 0.9rem;
+}
+
+/* Specific styles for each platform */
+.social-card.linkedin i {
+    color: #0077b5;
+}
+
+.social-card.github i {
+    color: #333;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .social-grid {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+    }
+    
+    .social-card {
+        padding: 1.5rem;
+    }
+    
+    .social-content i {
+        font-size: 2.5rem;
+    }
 }
