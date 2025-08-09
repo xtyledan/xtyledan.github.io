@@ -1,5 +1,17 @@
 # Tyler Daniels - Software Engineer Portfolio
+# Multi-page navigation
 
+The site navigation now links to individual pages instead of in-page anchors:
+
+- Home: `index.html`
+- Experience: `experience.html`
+- Education: `education.html`
+- Projects: `projects.html`
+- Skills: `skills.html`
+- Clubs: `clubs.html`
+- Contact: `contact.html`
+
+Update any content in the respective page files. Shared styles are in `css/style.css` and behavior in `main.js`.
 A modern, responsive portfolio website showcasing my skills, experience, and projects as an aspiring software engineer.
 
 ## 🚀 Features

@@ -3,22 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tyler Daniels - Software Engineer Portfolio</title>
+  <title>Tyler Daniels - Projects</title>
   
-  <!-- Preload critical fonts -->
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap"></noscript>
   
-  <!-- Preload critical CSS -->
   <link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="css/style.css"></noscript>
   
-  <!-- Load Font Awesome asynchronously -->
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"></noscript>
 </head>
 <body>
-  <!-- Sticky Navigation -->
   <nav class="sticky-nav">
     <div class="nav-container">
       <div class="nav-logo">
@@ -42,24 +38,49 @@
   </nav>
 
   <div class="container">
-    <header id="home">
-      <div class="hero-content">
-        <h1>Tyler Daniels</h1>
-        <p class="hero-subtitle">Aspiring Software Engineer</p>
-        <p class="hero-description">Passionate about creating innovative solutions and building the future through code</p>
-        <div class="hero-buttons">
-          <a href="projects.html" class="btn btn-primary">View My Work</a>
-          <a href="contact.html" class="btn btn-secondary">Get In Touch</a>
+    <section id="projects">
+      <h2><i class="fas fa-diagram-project"></i> Personal Projects</h2>
+
+      <article class="card">
+        <div class="project-header">
+          <i class="fas fa-cube"></i>
+          <h3>3D Visualization and Design Project</h3>
         </div>
-      </div>
-    </header>
+        <p>A project focused on 3D visualization and design workflows, accompanied by a detailed submission and reflection process to document lessons learned.</p>
+        <a href="https://github.com/xtyledan/3D-Visualization-and-Design-Project-Submission-and-Reflection" target="_blank" rel="noopener">
+          <i class="fab fa-github"></i> View on GitHub
+        </a>
+      </article>
+
+      <article class="card">
+        <div class="project-header">
+          <i class="fas fa-chart-line"></i>
+          <h3>Interactive Investment Growth Calculator</h3>
+        </div>
+        <p>An interactive tool to calculate and visualize investment growth over time, providing insights into financial planning and investment decisions.</p>
+        <a href="https://github.com/xtyledan/Interactive-Investment-Growth-Calculator" target="_blank" rel="noopener">
+          <i class="fab fa-github"></i> View on GitHub
+        </a>
+      </article>
+
+      <article class="card">
+        <div class="project-header">
+          <i class="far fa-clock"></i>
+          <h3>ISO-8601 Compliant Clock</h3>
+        </div>
+        <p>A globally compliant ISO-8601 clock project ensuring standard and consistent timekeeping across various regions.</p>
+        <a href="https://github.com/xtyledan/ISO-8601-Compliant-Clock-Ensuring-Global-Time-Consistency" target="_blank" rel="noopener">
+          <i class="fab fa-github"></i> View on GitHub
+        </a>
+      </article>
+    </section>
 
     <footer>
       <p>© 2025 Tyler Daniels</p>
     </footer>
   </div>
 
-  <!-- Load JavaScript asynchronously -->
   <script src="main.js" defer></script>
 </body>
 </html>
+

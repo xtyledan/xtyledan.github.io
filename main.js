@@ -8,9 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Initialize all functionality
 function initAll() {
-    initSmoothScroll();
     initMobileNav();
-    initActiveNav();
+    initActiveNavByUrl();
 }
 
 // Mobile Navigation
@@ -35,49 +34,23 @@ function initMobileNav() {
 }
 
 // Active Navigation Highlighting
-function initActiveNav() {
-    const sections = document.querySelectorAll('section[id]');
+function initActiveNavByUrl() {
     const navLinks = document.querySelectorAll('.nav-link');
-    
-    const updateActiveNav = () => {
-        let current = '';
-        
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            
-            if (scrollY >= (sectionTop - 200)) {
-                current = section.getAttribute('id');
-            }
-        });
-        
-        navLinks.forEach(link => {
+    const path = window.location.pathname;
+    let currentPage = path.split('/').pop();
+    if (!currentPage) currentPage = 'index.html';
+
+    navLinks.forEach(link => {
+        const href = link.getAttribute('href') || '';
+        const hrefPage = href.split('/').pop();
+
+        if (hrefPage === currentPage || (currentPage === 'index.html' && (hrefPage === '' || href === './'))) {
+            link.classList.add('active');
+        } else {
             link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
-                link.classList.add('active');
-            }
-        });
-    };
-    
-    // Update on scroll
-    window.addEventListener('scroll', updateActiveNav);
-    
-    // Initial update
-    updateActiveNav();
+        }
+    });
 }
 
 // Smooth scroll functionality
-function initSmoothScroll() {
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function(e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                const offsetTop = target.offsetTop - 80;
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
-            }
-        });
-    });
-}
+// Smooth scroll was used for in-page anchors. No longer needed with multi-page setup.

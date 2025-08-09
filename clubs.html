@@ -3,22 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Tyler Daniels - Software Engineer Portfolio</title>
+  <title>Tyler Daniels - Clubs</title>
   
-  <!-- Preload critical fonts -->
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap"></noscript>
   
-  <!-- Preload critical CSS -->
   <link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="css/style.css"></noscript>
   
-  <!-- Load Font Awesome asynchronously -->
   <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"></noscript>
 </head>
 <body>
-  <!-- Sticky Navigation -->
   <nav class="sticky-nav">
     <div class="nav-container">
       <div class="nav-logo">
@@ -42,24 +38,46 @@
   </nav>
 
   <div class="container">
-    <header id="home">
-      <div class="hero-content">
-        <h1>Tyler Daniels</h1>
-        <p class="hero-subtitle">Aspiring Software Engineer</p>
-        <p class="hero-description">Passionate about creating innovative solutions and building the future through code</p>
-        <div class="hero-buttons">
-          <a href="projects.html" class="btn btn-primary">View My Work</a>
-          <a href="contact.html" class="btn btn-secondary">Get In Touch</a>
+    <section class="section clubs" id="clubs">
+      <h2 class="section-title"><i class="fas fa-users"></i> Clubs</h2>
+
+      <div class="clubs__container bd-grid">
+        <div class="clubs__content">
+          <div class="clubs__header">
+            <i class="fas fa-award clubs__icon"></i>
+            <div class="clubs__title-group">
+              <h3 class="clubs__title">National Society Of Leadership And Success</h3>
+              <span class="clubs__position">
+                <i class="fas fa-user-tie"></i> Member
+              </span>
+            </div>
+          </div>
+          <div class="clubs__data">
+            <p class="clubs__description">
+              <span class="clubs__item">
+                <i class="fas fa-star"></i>
+                Selected for membership based on academic achievements and leadership potential
+              </span>
+              <span class="clubs__item">
+                <i class="fas fa-graduation-cap"></i>
+                Completed leadership training program including Success Networking Team meetings
+              </span>
+              <span class="clubs__item">
+                <i class="fas fa-users"></i>
+                Developed crucial leadership skills through interactive training sessions and peer networking
+              </span>
+            </p>
+          </div>
         </div>
       </div>
-    </header>
+    </section>
 
     <footer>
       <p>© 2025 Tyler Daniels</p>
     </footer>
   </div>
 
-  <!-- Load JavaScript asynchronously -->
   <script src="main.js" defer></script>
 </body>
 </html>
+
