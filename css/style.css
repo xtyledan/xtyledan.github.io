@@ -104,20 +104,13 @@ body {
   margin: 0 auto;
   padding: 0 20px;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   height: 70px;
 }
 
 .nav-logo a {
-  font-family: var(--font-heading);
-  font-size: 1.5rem;
-  font-weight: 600;
-  text-decoration: none;
-  background: var(--gradient-primary);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
+  display: none;
 }
 
 .nav-menu {
