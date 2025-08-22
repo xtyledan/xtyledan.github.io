@@ -21,13 +21,12 @@
   <!-- Sticky Navigation -->
   <nav class="sticky-nav">
     <div class="nav-container">
-
       <div class="nav-menu" id="nav-menu">
-        <a href="index.html" class="nav-link">Home</a>
-        <a href="experience.html" class="nav-link">Experience & Projects</a>
-        <a href="education.html" class="nav-link">Education & Skills</a>
-        <a href="clubs.html" class="nav-link">Clubs</a>
-        <a href="contact.html" class="nav-link">Contact</a>
+        <a href="#home" class="nav-link">Home</a>
+        <a href="#experience" class="nav-link">Experience & Projects</a>
+        <a href="#education" class="nav-link">Education & Skills</a>
+        <a href="#clubs" class="nav-link">Clubs</a>
+        <a href="#contact" class="nav-link">Contact</a>
       </div>
       <div class="nav-toggle" id="nav-toggle">
         <span class="bar"></span>
@@ -38,17 +37,351 @@
   </nav>
 
   <div class="container">
-    <header id="home">
+    <!-- Home Section -->
+    <header id="home" class="section">
       <div class="hero-content">
         <h1>Tyler Daniels</h1>
         <p class="hero-subtitle">Aspiring Software Engineer</p>
         <p class="hero-description">Passionate about creating innovative solutions and building the future through code</p>
         <div class="hero-buttons">
-          <a href="projects.html" class="btn btn-primary">View My Work</a>
-          <a href="contact.html" class="btn btn-secondary">Get In Touch</a>
+          <a href="#experience" class="btn btn-primary">View My Work</a>
+          <a href="#contact" class="btn btn-secondary">Get In Touch</a>
         </div>
       </div>
     </header>
+
+    <!-- Experience Section -->
+    <section id="experience" class="section">
+      <h2><i class="fas fa-briefcase"></i> Experience</h2>
+      <div class="experience-grid">
+        <div class="experience-card">
+          <div class="experience-header">
+            <div class="company-logo">
+              <img src="Images/amazon-logo.jpg" alt="Amazon Logo" class="company-logo-img">
+            </div>
+            <div class="job-title-container">
+              <h3>IT Equipment Coordinator</h3>
+              <div class="company-name">Amazon</div>
+              <div class="experience-date"><i class="far fa-calendar-alt"></i> March 2023 - Present</div>
+            </div>
+          </div>
+          <div class="experience-content">
+            <div class="job-description">
+              <p>Managing and coordinating IT equipment distribution and maintenance across multiple facilities.</p>
+            </div>
+            <div class="job-highlights">
+              <ul>
+                <li><i class="fas fa-check-circle"></i> Equipment inventory management</li>
+                <li><i class="fas fa-check-circle"></i> Technical support coordination</li>
+                <li><i class="fas fa-check-circle"></i> Process optimization</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="experience-card">
+          <div class="experience-header">
+            <div class="company-logo">
+              <img src="Images/Twisted_kelp_logo.PNG" alt="Twisted Kelp Logo" class="company-logo-img">
+            </div>
+            <div class="job-title-container">
+              <h3>IT Support Specialist</h3>
+              <div class="company-name">Twisted Kelp</div>
+              <div class="experience-date"><i class="far fa-calendar-alt"></i> January 2022 - March 2023</div>
+            </div>
+          </div>
+          <div class="experience-content">
+            <div class="job-description">
+              <p>Provided comprehensive IT support and technical assistance to ensure smooth operations.</p>
+            </div>
+            <div class="job-highlights">
+              <ul>
+                <li><i class="fas fa-check-circle"></i> Technical troubleshooting</li>
+                <li><i class="fas fa-check-circle"></i> System maintenance</li>
+                <li><i class="fas fa-check-circle"></i> User training and support</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section">
+      <h2><i class="fas fa-diagram-project"></i> Personal Projects</h2>
+
+      <article class="card">
+        <div class="project-header">
+          <i class="fas fa-cube"></i>
+          <h3>3D Visualization and Design Project</h3>
+        </div>
+        <p>A project focused on 3D visualization and design workflows, accompanied by a detailed submission and reflection process to document lessons learned.</p>
+        <a href="https://github.com/xtyledan/3D-Visualization-and-Design-Project-Submission-and-Reflection" target="_blank" rel="noopener">
+          <i class="fab fa-github"></i> View on GitHub
+        </a>
+      </article>
+
+      <article class="card">
+        <div class="project-header">
+          <i class="fas fa-chart-line"></i>
+          <h3>Interactive Investment Growth Calculator</h3>
+        </div>
+        <p>An interactive tool to calculate and visualize investment growth over time, providing insights into financial planning and investment decisions.</p>
+        <a href="https://github.com/xtyledan/Interactive-Investment-Growth-Calculator" target="_blank" rel="noopener">
+          <i class="fab fa-github"></i> View on GitHub
+        </a>
+      </article>
+
+      <article class="card">
+        <div class="project-header">
+          <i class="far fa-clock"></i>
+          <h3>ISO-8601 Compliant Clock</h3>
+        </div>
+        <p>A globally compliant ISO-8601 clock project ensuring standard and consistent timekeeping across various regions.</p>
+        <a href="https://github.com/xtyledan/ISO-8601-Compliant-Clock-Ensuring-Global-Time-Consistency" target="_blank" rel="noopener">
+          <i class="fab fa-github"></i> View on GitHub
+        </a>
+      </article>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="section">
+      <h2><i class="fas fa-graduation-cap"></i> Education</h2>
+      <div class="education-grid">
+        <div class="education-card">
+          <div class="education-header">
+            <div class="degree-type"><i class="fas fa-award"></i> Master of Science</div>
+            <div class="education-date"><i class="far fa-calendar-alt"></i> Feb 2026 – Feb 2028</div>
+          </div>
+          <div class="education-content">
+            <h3><i class="fas fa-laptop-code"></i> Computer Science</h3>
+            <div class="university"><i class="fas fa-university"></i> Southern New Hampshire University</div>
+            <div class="education-details">
+              <ul>
+                <li><i class="fas fa-code-branch"></i> Concentration in Software Engineering</li>
+                <li><i class="fas fa-book"></i> Relevant Coursework:
+                  <ul>
+                    <li><i class="fas fa-angle-right"></i> Advanced Software Architecture</li>
+                    <li><i class="fas fa-angle-right"></i> Advanced Algorithms & Complexity</li>
+                    <li><i class="fas fa-angle-right"></i> Software Engineering Management</li>
+                    <li><i class="fas fa-angle-right"></i> Distributed Systems Design</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="education-card">
+          <div class="education-header">
+            <div class="degree-type"><i class="fas fa-award"></i> Bachelor of Science</div>
+            <div class="education-date"><i class="far fa-calendar-alt"></i> Jan 2024 – Oct 2025</div>
+          </div>
+          <div class="education-content">
+            <h3><i class="fas fa-laptop-code"></i> Computer Science</h3>
+            <div class="university"><i class="fas fa-university"></i> Southern New Hampshire University</div>
+            <div class="education-details">
+              <ul>
+                <li><i class="fas fa-code-branch"></i> Concentration in Software Engineering</li>
+                <li><i class="fas fa-book"></i> Relevant Coursework:
+                  <ul>
+                    <li><i class="fas fa-angle-right"></i> Advanced Software Development</li>
+                    <li><i class="fas fa-angle-right"></i> Data Structures & Algorithms</li>
+                    <li><i class="fas fa-angle-right"></i> Database Management Systems</li>
+                    <li><i class="fas fa-angle-right"></i> Web Development</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div class="education-card">
+          <div class="education-header">
+            <div class="degree-type"><i class="fas fa-award"></i> Associate of Science</div>
+            <div class="education-date"><i class="far fa-calendar-alt"></i> Jan 2022 – Jan 2024</div>
+          </div>
+          <div class="education-content">
+            <h3><i class="fas fa-laptop-code"></i> Computer Science</h3>
+            <div class="university"><i class="fas fa-university"></i> Southern New Hampshire University</div>
+            <div class="education-details">
+              <ul>
+                <li><i class="fas fa-book"></i> Relevant Coursework:
+                  <ul>
+                    <li><i class="fas fa-angle-right"></i> Introduction to Programming</li>
+                    <li><i class="fas fa-angle-right"></i> Object-Oriented Programming</li>
+                    <li><i class="fas fa-angle-right"></i> Computer Architecture</li>
+                    <li><i class="fas fa-angle-right"></i> Mathematics for Computer Science</li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section skills" id="skills">
+      <h2 class="section-title"><i class="fas fa-screwdriver-wrench"></i> Skills</h2>
+
+      <div class="skills__container bd-grid">
+        <div class="skills__content">
+          <h3 class="skills__subtitle">
+            <i class="fas fa-code"></i> Programming Languages
+          </h3>
+          <div class="skills__data">
+            <div class="skills__item">
+              <i class="fab fa-python"></i>
+              <span class="skills__name">Python</span>
+            </div>
+            <div class="skills__item">
+              <i class="fab fa-java"></i>
+              <span class="skills__name">Java</span>
+            </div>
+            <div class="skills__item">
+              <i class="fab fa-js"></i>
+              <span class="skills__name">JavaScript</span>
+            </div>
+            <div class="skills__item">
+              <i class="fas fa-code"></i>
+              <span class="skills__name">C++</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="skills__content">
+          <h3 class="skills__subtitle">
+            <i class="fas fa-globe"></i> Web Development
+          </h3>
+          <div class="skills__data">
+            <div class="skills__item">
+              <i class="fab fa-html5"></i>
+              <span class="skills__name">HTML5</span>
+            </div>
+            <div class="skills__item">
+              <i class="fab fa-css3-alt"></i>
+              <span class="skills__name">CSS3</span>
+            </div>
+            <div class="skills__item">
+              <i class="fab fa-react"></i>
+              <span class="skills__name">React</span>
+            </div>
+            <div class="skills__item">
+              <i class="fab fa-node-js"></i>
+              <span class="skills__name">Node.js</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="skills__content">
+          <h3 class="skills__subtitle">
+            <i class="fas fa-tools"></i> Tools & Technologies
+          </h3>
+          <div class="skills__data">
+            <div class="skills__item">
+              <i class="fab fa-git-alt"></i>
+              <span class="skills__name">Git</span>
+            </div>
+            <div class="skills__item">
+              <i class="fab fa-github"></i>
+              <span class="skills__name">GitHub</span>
+            </div>
+            <div class="skills__item">
+              <i class="fas fa-database"></i>
+              <span class="skills__name">SQL</span>
+            </div>
+            <div class="skills__item">
+              <i class="fas fa-terminal"></i>
+              <span class="skills__name">Command Line</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="skills__content">
+          <h3 class="skills__subtitle">
+            <i class="fas fa-users"></i> Soft Skills
+          </h3>
+          <div class="skills__data">
+            <div class="skills__item">
+              <i class="fas fa-comments"></i>
+              <span class="skills__name">Communication</span>
+            </div>
+            <div class="skills__item">
+              <i class="fas fa-tasks"></i>
+              <span class="skills__name">Project Management</span>
+            </div>
+            <div class="skills__item">
+              <i class="fas fa-brain"></i>
+              <span class="skills__name">Problem Solving</span>
+            </div>
+            <div class="skills__item">
+              <i class="fas fa-users-gear"></i>
+              <span class="skills__name">Team Leadership</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Clubs Section -->
+    <section class="section clubs" id="clubs">
+      <h2 class="section-title"><i class="fas fa-users"></i> Clubs</h2>
+
+      <div class="clubs__container bd-grid">
+        <div class="clubs__content">
+          <div class="clubs__header">
+            <i class="fas fa-award clubs__icon"></i>
+            <div class="clubs__title-group">
+              <h3 class="clubs__title">National Society Of Leadership And Success</h3>
+              <span class="clubs__position">
+                <i class="fas fa-user-tie"></i> Member
+              </span>
+            </div>
+          </div>
+          <div class="clubs__data">
+            <p class="clubs__description">
+              <span class="clubs__item">
+                <i class="fas fa-star"></i>
+                Selected for membership based on academic achievements and leadership potential
+              </span>
+              <span class="clubs__item">
+                <i class="fas fa-graduation-cap"></i>
+                Completed leadership training program including Success Networking Team meetings
+              </span>
+              <span class="clubs__item">
+                <i class="fas fa-users"></i>
+                Developed crucial leadership skills through interactive training sessions and peer networking
+              </span>
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section social-section">
+      <h2><i class="fas fa-share-alt"></i> Connect With Me</h2>
+      <div class="social-grid">
+        <a href="https://www.linkedin.com/in/tyler-daniels2000/" target="_blank" rel="noopener" class="social-card linkedin">
+          <div class="social-content">
+            <i class="fab fa-linkedin"></i>
+            <h3>LinkedIn</h3>
+            <p>Connect with me professionally</p>
+            <span class="social-username">@tyler-daniels2000</span>
+          </div>
+        </a>
+
+        <a href="https://github.com/xtyledan" target="_blank" rel="noopener" class="social-card github">
+          <div class="social-content">
+            <i class="fab fa-github"></i>
+            <h3>GitHub</h3>
+            <p>Check out my projects</p>
+            <span class="social-username">@xtyledan</span>
+          </div>
+        </a>
+      </div>
+    </section>
 
     <footer>
       <p>© 2025 Tyler Daniels</p>

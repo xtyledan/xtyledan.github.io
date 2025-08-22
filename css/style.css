@@ -249,12 +249,22 @@ header h1 {
 section {
   padding: 4rem 1rem;
   margin-bottom: 2rem;
+  scroll-margin-top: 100px; /* Account for fixed navigation */
 }
 
 section:nth-of-type(even) {
   background: var(--bg-secondary);
   border-radius: 16px;
   padding: 3rem 2rem;
+}
+
+/* Section spacing for single-page layout */
+.section {
+  margin-bottom: 3rem;
+}
+
+.section:last-of-type {
+  margin-bottom: 0;
 }
 
 h2 {
@@ -534,6 +544,36 @@ footer {
   border-radius: 12px;
   box-shadow: var(--shadow-md);
   border: 1px solid var(--neutral-200);
+}
+
+/* Single-page layout improvements */
+.container {
+  padding-bottom: 2rem;
+}
+
+/* Better section transitions */
+section {
+  transition: all 0.3s ease;
+}
+
+/* Improved spacing for single-page sections */
+#home {
+  margin-bottom: 0;
+}
+
+#experience,
+#projects,
+#education,
+#skills,
+#clubs,
+#contact {
+  margin-top: 2rem;
+}
+
+/* Enhanced visual separation between sections */
+section:not(:last-of-type) {
+  border-bottom: 1px solid var(--neutral-200);
+  padding-bottom: 3rem;
 }
 
 /* Mobile Navigation */

@@ -9,7 +9,8 @@ document.addEventListener('DOMContentLoaded', () => {
 // Initialize all functionality
 function initAll() {
     initMobileNav();
-    initActiveNavByUrl();
+    initSmoothScrolling();
+    initActiveNavOnScroll();
 }
 
 // Mobile Navigation
@@ -33,24 +34,57 @@ function initMobileNav() {
     }
 }
 
-// Active Navigation Highlighting
-function initActiveNavByUrl() {
-    const navLinks = document.querySelectorAll('.nav-link');
-    const path = window.location.pathname;
-    let currentPage = path.split('/').pop();
-    if (!currentPage) currentPage = 'index.html';
-
-    navLinks.forEach(link => {
-        const href = link.getAttribute('href') || '';
-        const hrefPage = href.split('/').pop();
-
-        if (hrefPage === currentPage || (currentPage === 'index.html' && (hrefPage === '' || href === './'))) {
-            link.classList.add('active');
-        } else {
-            link.classList.remove('active');
-        }
+// Smooth scrolling for single-page navigation
+function initSmoothScrolling() {
+    document.querySelectorAll('.nav-link[href^="#"]').forEach(link => {
+        link.addEventListener('click', (e) => {
+            e.preventDefault();
+            const targetId = link.getAttribute('href');
+            const targetSection = document.querySelector(targetId);
+            
+            if (targetSection) {
+                targetSection.scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'start'
+                });
+            }
+        });
     });
 }
 
-// Smooth scroll functionality
-// Smooth scroll was used for in-page anchors. No longer needed with multi-page setup.
+// Active Navigation Highlighting based on scroll position
+function initActiveNavOnScroll() {
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
+    
+    window.addEventListener('scroll', () => {
+        let current = '';
+        const scrollPosition = window.scrollY + 150; // Offset for fixed nav
+        
+        sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                current = section.getAttribute('id');
+            }
+        });
+        
+        navLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('href') === `#${current}`) {
+                link.classList.add('active');
+            }
+        });
+        
+        // Handle home section
+        if (scrollPosition < 200) {
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === '#home') {
+                    link.classList.add('active');
+                }
+            });
+        }
+    });
+}
