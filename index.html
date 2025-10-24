@@ -5,6 +5,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Tyler Daniels - Software Engineer Portfolio</title>
   
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Tyler Daniels - Aspiring Software Engineer with expertise in Computer Science, Software Development, and IT Support. View my portfolio showcasing projects, experience, and technical skills.">
+  <meta name="keywords" content="Tyler Daniels, Software Engineer, Computer Science, Portfolio, Web Development, JavaScript, Python, Java, IT Support, Amazon, Software Development">
+  <meta name="author" content="Tyler Daniels">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  <meta name="revisit-after" content="7 days">
+  
+  <!-- Open Graph Meta Tags -->
+  <meta property="og:title" content="Tyler Daniels - Software Engineer Portfolio">
+  <meta property="og:description" content="Aspiring Software Engineer with expertise in Computer Science, Software Development, and IT Support. View my portfolio showcasing projects, experience, and technical skills.">
+  <meta property="og:image" content="https://xtyledan.github.io/Images/amazon-logo.jpg">
+  <meta property="og:url" content="https://xtyledan.github.io">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Tyler Daniels Portfolio">
+  <meta property="og:locale" content="en_US">
+  
+  <!-- Twitter Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Tyler Daniels - Software Engineer Portfolio">
+  <meta name="twitter:description" content="Aspiring Software Engineer with expertise in Computer Science, Software Development, and IT Support. View my portfolio showcasing projects, experience, and technical skills.">
+  <meta name="twitter:image" content="https://xtyledan.github.io/Images/amazon-logo.jpg">
+  <meta name="twitter:site" content="@xtyledan">
+  <meta name="twitter:creator" content="@xtyledan">
+  
+  <!-- Additional SEO -->
+  <meta name="theme-color" content="#2563eb">
+  <meta name="msapplication-TileColor" content="#2563eb">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Tyler Daniels Portfolio">
+  
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://xtyledan.github.io">
+  
   <!-- Preload critical fonts -->
   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap"></noscript>
@@ -23,11 +58,11 @@
     <div class="nav-container">
       <div class="nav-menu" id="nav-menu">
         <a href="#home" class="nav-link">Home</a>
-        <a href="#experience" class="nav-link">Experience & Projects</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#projects" class="nav-link">Projects</a>
         <a href="#education" class="nav-link">Education & Skills</a>
         <a href="#clubs" class="nav-link">Clubs</a>
         <a href="#contact" class="nav-link">Contact</a>
-        <a href="social.html" class="nav-link">Current Project</a>
       </div>
       <div class="nav-toggle" id="nav-toggle">
         <span class="bar"></span>
@@ -41,12 +76,62 @@
     <!-- Home Section -->
     <header id="home" class="section">
       <div class="hero-content">
-        <h1>Tyler Daniels</h1>
-        <p class="hero-subtitle">Aspiring Software Engineer</p>
-        <p class="hero-description">Passionate about creating innovative solutions and building the future through code</p>
+        <div class="hero-badge">
+          <i class="fas fa-code"></i>
+          <span>Software Engineer</span>
+        </div>
+        <h1 class="hero-title">
+          <span class="hero-name">Tyler Daniels</span>
+          <span class="hero-role">Building Tomorrow's Technology</span>
+        </h1>
+        <p class="hero-description">
+          Passionate about creating innovative solutions and building the future through code. 
+        </p>
+        <div class="hero-stats">
+          <div class="stat-item">
+            <span class="stat-number">5+</span>
+            <span class="stat-label">Years Experience</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">20%</span>
+            <span class="stat-label">Uptime Improvement</span>
+          </div>
+          <div class="stat-item">
+            <span class="stat-number">100+</span>
+            <span class="stat-label">Hours Saved</span>
+          </div>
+        </div>
         <div class="hero-buttons">
-          <a href="#experience" class="btn btn-primary">View My Work</a>
-          <a href="#contact" class="btn btn-secondary">Get In Touch</a>
+          <a href="#projects" class="btn btn-primary">
+            <i class="fas fa-rocket"></i>
+            <span>View My Projects</span>
+          </a>
+          <a href="#contact" class="btn btn-secondary">
+            <i class="fas fa-envelope"></i>
+            <span>Let's Connect</span>
+          </a>
+        </div>
+        <div class="hero-scroll">
+          <a href="#experience" class="scroll-indicator">
+            <i class="fas fa-chevron-down"></i>
+            <span>Explore My Journey</span>
+          </a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="floating-elements">
+          <div class="floating-icon icon-1">
+            <i class="fab fa-python"></i>
+          </div>
+          <div class="floating-icon icon-2">
+            <i class="fab fa-js"></i>
+          </div>
+          <div class="floating-icon icon-3">
+            <i class="fas fa-database"></i>
+          </div>
+          <div class="floating-icon icon-4">
+            <i class="fas fa-code"></i>
+          </div>
         </div>
       </div>
     </header>
@@ -61,20 +146,22 @@
               <img src="Images/amazon-logo.jpg" alt="Amazon Logo" class="company-logo-img">
             </div>
             <div class="job-title-container">
-              <h3>IT Equipment Coordinator</h3>
+              <h3>IT Technician</h3>
               <div class="company-name">Amazon</div>
-              <div class="experience-date"><i class="far fa-calendar-alt"></i> March 2023 - Present</div>
+              <div class="experience-date"><i class="far fa-calendar-alt"></i> September 2022 - Present</div>
             </div>
           </div>
           <div class="experience-content">
             <div class="job-description">
-              <p>Managing and coordinating IT equipment distribution and maintenance across multiple facilities.</p>
+              <p>Developed and implemented an inventory management system, reducing equipment allocation time by 30% and increasing uptime by 15%, which in turn enhanced overall IT resource efficiency. Designed and deployed an automated RMA tracking system, decreasing warranty repair downtime by 40% and saving 100+ monthly administrative hours.</p>
             </div>
             <div class="job-highlights">
               <ul>
-                <li><i class="fas fa-check-circle"></i> Equipment inventory management</li>
-                <li><i class="fas fa-check-circle"></i> Technical support coordination</li>
-                <li><i class="fas fa-check-circle"></i> Process optimization</li>
+                <li><i class="fas fa-database"></i> Inventory Management Systems</li>
+                <li><i class="fas fa-cogs"></i> Process Automation</li>
+                <li><i class="fas fa-chart-bar"></i> Performance Analytics</li>
+                <li><i class="fas fa-tools"></i> RMA Tracking Systems</li>
+                <li><i class="fas fa-dollar-sign"></i> Cost Optimization</li>
               </ul>
             </div>
           </div>
@@ -88,18 +175,20 @@
             <div class="job-title-container">
               <h3>IT Support Specialist</h3>
               <div class="company-name">Twisted Kelp</div>
-              <div class="experience-date"><i class="far fa-calendar-alt"></i> January 2022 - March 2023</div>
+              <div class="experience-date"><i class="far fa-calendar-alt"></i> January 2018 - August 2022</div>
             </div>
           </div>
           <div class="experience-content">
             <div class="job-description">
-              <p>Provided comprehensive IT support and technical assistance to ensure smooth operations.</p>
+              <p>Increased equipment uptime by 20% through implementation of predictive maintenance strategies, improving reliability and cost effectiveness. I also introduced automated data capture tools, enhancing workflow efficiency and data accuracy. We often collaborated with CALFIRE to develop rapid-response protocols and real time monitoring systems for emergency resource deployment.</p>
             </div>
             <div class="job-highlights">
               <ul>
-                <li><i class="fas fa-check-circle"></i> Technical troubleshooting</li>
-                <li><i class="fas fa-check-circle"></i> System maintenance</li>
-                <li><i class="fas fa-check-circle"></i> User training and support</li>
+                <li><i class="fas fa-tools"></i> Predictive Maintenance</li>
+                <li><i class="fas fa-robot"></i> Automation & Data Capture</li>
+                <li><i class="fas fa-chart-line"></i> Performance Optimization</li>
+                <li><i class="fas fa-users-cog"></i> Cross-Agency Collaboration</li>
+                <li><i class="fas fa-shield-alt"></i> Emergency Response Systems</li>
               </ul>
             </div>
           </div>
@@ -111,116 +200,8 @@
     <section id="projects" class="section">
       <h2><i class="fas fa-diagram-project"></i> Personal Projects</h2>
       
-      <!-- Project Carousel Container -->
-      <div class="projects-carousel">
-        <div class="carousel-container">
-          <div class="carousel-track" id="carousel-track">
-            
-            <!-- Project 1: 3D Visualization -->
-            <div class="project-card active">
-              <div class="project-image-container">
-                <img src="Images/3d-visualization-screenshot.png" alt="3D Visualization Project Screenshot" class="project-image">
-                <div class="project-overlay">
-                  <div class="project-category">
-                    <i class="fas fa-cube"></i>
-                    <span>3D Design</span>
-                  </div>
-                </div>
-              </div>
-              <div class="project-content">
-                <div class="project-header">
-                  <h3>3D Visualization and Design Project</h3>
-                  <div class="project-tech-stack">
-                    <span class="tech-tag">3D Modeling</span>
-                    <span class="tech-tag">Design Workflows</span>
-                    <span class="tech-tag">Reflection Process</span>
-                  </div>
-                </div>
-                <div class="project-description">
-                  <p><strong>Problem Solved:</strong> Developed comprehensive 3D visualization workflows and design processes to create professional-grade visual content with documented learning outcomes.</p>
-                  <p><strong>My Role:</strong> Lead designer and developer responsible for creating 3D models, implementing visualization workflows, and documenting the complete design process through detailed reflection and submission materials.</p>
-                  <p><strong>Tech Stack:</strong> 3D modeling software, design workflow tools, documentation systems</p>
-                </div>
-                <div class="project-links">
-                  <a href="https://github.com/xtyledan/3D-Visualization-and-Design-Project-Submission-and-Reflection" target="_blank" rel="noopener" class="project-link github-link">
-                    <i class="fab fa-github"></i>
-                    <span>View on GitHub</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <!-- Project 2: Investment Calculator -->
-            <div class="project-card">
-              <div class="project-image-container">
-                <img src="Images/investment-calculator-screenshot.png" alt="Investment Calculator Project Screenshot" class="project-image">
-                <div class="project-overlay">
-                  <div class="project-category">
-                    <i class="fas fa-chart-line"></i>
-                    <span>Financial Tools</span>
-                  </div>
-                </div>
-              </div>
-              <div class="project-content">
-                <div class="project-header">
-                  <h3>Interactive Investment Growth Calculator</h3>
-                  <div class="project-tech-stack">
-                    <span class="tech-tag">JavaScript</span>
-                    <span class="tech-tag">HTML5</span>
-                    <span class="tech-tag">CSS3</span>
-                    <span class="tech-tag">Data Visualization</span>
-                  </div>
-                </div>
-                <div class="project-description">
-                  <p><strong>Problem Solved:</strong> Created an intuitive financial planning tool that helps users visualize long-term investment growth and make informed financial decisions through interactive calculations and charts.</p>
-                  <p><strong>My Role:</strong> Full-stack developer responsible for designing the user interface, implementing complex financial calculations, and creating interactive data visualizations for investment growth scenarios.</p>
-                  <p><strong>Tech Stack:</strong> JavaScript, HTML5, CSS3, Chart.js, Financial calculation algorithms</p>
-                </div>
-                <div class="project-links">
-                  <a href="https://github.com/xtyledan/Interactive-Investment-Growth-Calculator" target="_blank" rel="noopener" class="project-link github-link">
-                    <i class="fab fa-github"></i>
-                    <span>View on GitHub</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <!-- Project 3: ISO Clock -->
-            <div class="project-card">
-              <div class="project-image-container">
-                <img src="Images/iso-clock-screenshot.png" alt="ISO-8601 Clock Project Screenshot" class="project-image">
-                <div class="project-overlay">
-                  <div class="project-category">
-                    <i class="far fa-clock"></i>
-                    <span>Time Systems</span>
-                  </div>
-                </div>
-              </div>
-              <div class="project-content">
-                <div class="project-header">
-                  <h3>ISO-8601 Compliant Clock</h3>
-                  <div class="project-tech-stack">
-                    <span class="tech-tag">JavaScript</span>
-                    <span class="tech-tag">Time APIs</span>
-                    <span class="tech-tag">ISO Standards</span>
-                    <span class="tech-tag">Global Time</span>
-                  </div>
-                </div>
-                <div class="project-description">
-                  <p><strong>Problem Solved:</strong> Developed a globally compliant timekeeping system that ensures consistent time display across different regions while adhering to international ISO-8601 standards.</p>
-                  <p><strong>My Role:</strong> Software engineer responsible for implementing timezone handling, ISO-8601 compliance, and creating a user-friendly interface for global time synchronization.</p>
-                  <p><strong>Tech Stack:</strong> JavaScript, Web APIs, Timezone libraries, ISO-8601 standards implementation</p>
-                </div>
-                <div class="project-links">
-                  <a href="https://github.com/xtyledan/ISO-8601-Compliant-Clock-Ensuring-Global-Time-Consistency" target="_blank" rel="noopener" class="project-link github-link">
-                    <i class="fab fa-github"></i>
-                    <span>View on GitHub</span>
-                  </a>
-                </div>
-              </div>
-            </div>
-
-            <!-- Project 4: Capstone Project -->
+      <!-- Project Display -->
+      <div class="project-display">
             <div class="project-card featured">
               <div class="project-image-container">
                 <div class="project-video-container">
@@ -234,47 +215,37 @@
                 </div>
                 <div class="project-overlay">
                   <div class="project-category featured">
-                    <i class="fas fa-graduation-cap"></i>
-                    <span>Capstone Project</span>
+                <i class="fas fa-gamepad"></i>
+                <span>Game Development</span>
                   </div>
                 </div>
               </div>
               <div class="project-content">
                 <div class="project-header">
-                  <h3>Computer Science Capstone Project</h3>
+              <h3>C-OpenGL-Brick-Breaker</h3>
                   <div class="project-tech-stack">
-                    <span class="tech-tag">Software Engineering</span>
-                    <span class="tech-tag">Algorithms</span>
-                    <span class="tech-tag">Database Systems</span>
-                    <span class="tech-tag">Portfolio Development</span>
+                <span class="tech-tag">C Programming</span>
+                <span class="tech-tag">OpenGL</span>
+                <span class="tech-tag">Game Development</span>
+                <span class="tech-tag">Graphics Programming</span>
                   </div>
                 </div>
                 <div class="project-description">
-                  <p><strong>Problem Solved:</strong> Created a comprehensive professional ePortfolio that demonstrates mastery of software engineering & design, algorithms & data structures, and database systems as the culmination of my Computer Science education.</p>
-                  <p><strong>My Role:</strong> Lead developer and project manager responsible for designing the portfolio architecture, implementing enhanced artifacts, and creating professional self-assessments that showcase technical competency.</p>
-                  <p><strong>Tech Stack:</strong> HTML5, CSS3, JavaScript, Database Design, Software Architecture, Algorithm Implementation</p>
+              <p><strong>Problem Solved:</strong> Developed an interactive Brick Breaker game using C programming and OpenGL graphics library, demonstrating proficiency in low-level programming, graphics rendering, and game mechanics implementation.</p>
+              <p><strong>My Role:</strong> Full-stack developer responsible for implementing game physics, collision detection, rendering pipeline, and user input handling to create an engaging gaming experience.</p>
+              <p><strong>Tech Stack:</strong> C Programming, OpenGL, Graphics Programming, Game Physics, Collision Detection, Real-time Rendering</p>
                 </div>
                 <div class="project-links">
-                  <a href="social.html" target="_blank" rel="noopener" class="project-link demo-link">
-                    <i class="fas fa-play-circle"></i>
-                    <span>View Project Walkthrough</span>
-                  </a>
-                </div>
-              </div>
+              <a href="https://github.com/xtyledan/C-OpenGL-Brick-Breaker-CS499" target="_blank" rel="noopener" class="project-link github-link">
+                <i class="fab fa-github"></i>
+                <span>View on GitHub</span>
+              </a>
+              <a href="https://youtu.be/J6-ojfRMbXk" target="_blank" rel="noopener" class="project-link demo-link">
+                <i class="fas fa-play-circle"></i>
+                <span>Code Review Video</span>
+              </a>
             </div>
-
           </div>
-        </div>
-        
-        <!-- Carousel Navigation -->
-        <div class="carousel-navigation">
-          <button class="carousel-btn prev-btn" id="prevBtn" aria-label="Previous project">
-            <i class="fas fa-chevron-left"></i>
-          </button>
-          <div class="carousel-dots" id="carouselDots"></div>
-          <button class="carousel-btn next-btn" id="nextBtn" aria-label="Next project">
-            <i class="fas fa-chevron-right"></i>
-          </button>
         </div>
       </div>
     </section>
@@ -285,71 +256,42 @@
       <div class="education-grid">
         <div class="education-card">
           <div class="education-header">
-            <div class="degree-type"><i class="fas fa-award"></i> Master of Science</div>
-            <div class="education-date"><i class="far fa-calendar-alt"></i> Feb 2026 – Feb 2028</div>
+            <div class="degree-type"><i class="fas fa-award"></i> Master's Degree</div>
+            <div class="education-date"><i class="far fa-calendar-alt"></i> February 2026 - January 2028</div>
           </div>
           <div class="education-content">
-            <h3><i class="fas fa-laptop-code"></i> Computer Science</h3>
+            <h3><i class="fas fa-laptop-code"></i> Computer Science - Software Engineering</h3>
             <div class="university"><i class="fas fa-university"></i> Southern New Hampshire University</div>
             <div class="education-details">
-              <ul>
-                <li><i class="fas fa-code-branch"></i> Concentration in Software Engineering</li>
-                <li><i class="fas fa-book"></i> Relevant Coursework:
-                  <ul>
-                    <li><i class="fas fa-angle-right"></i> Advanced Software Architecture</li>
-                    <li><i class="fas fa-angle-right"></i> Advanced Algorithms & Complexity</li>
-                    <li><i class="fas fa-angle-right"></i> Software Engineering Management</li>
-                    <li><i class="fas fa-angle-right"></i> Distributed Systems Design</li>
-                  </ul>
-                </li>
-              </ul>
+              <p>Pursuing a Master of Science in Computer Science with a concentration in Software Engineering, focusing on software design, UI/UX implementation, testing, and full-stack development. Gaining advanced technical and collaborative skills to create innovative, high-quality software solutions.</p>
             </div>
           </div>
         </div>
 
         <div class="education-card">
           <div class="education-header">
-            <div class="degree-type"><i class="fas fa-award"></i> Bachelor of Science</div>
-            <div class="education-date"><i class="far fa-calendar-alt"></i> Jan 2024 – Oct 2025</div>
+            <div class="degree-type"><i class="fas fa-award"></i> Bachelor's Degree</div>
+            <div class="education-date"><i class="far fa-calendar-alt"></i> January 2024 - October 2025</div>
           </div>
           <div class="education-content">
-            <h3><i class="fas fa-laptop-code"></i> Computer Science</h3>
+            <h3><i class="fas fa-laptop-code"></i> Computer Science - Software Engineering</h3>
             <div class="university"><i class="fas fa-university"></i> Southern New Hampshire University</div>
             <div class="education-details">
-              <ul>
-                <li><i class="fas fa-code-branch"></i> Concentration in Software Engineering</li>
-                <li><i class="fas fa-book"></i> Relevant Coursework:
-                  <ul>
-                    <li><i class="fas fa-angle-right"></i> Advanced Software Development</li>
-                    <li><i class="fas fa-angle-right"></i> Data Structures & Algorithms</li>
-                    <li><i class="fas fa-angle-right"></i> Database Management Systems</li>
-                    <li><i class="fas fa-angle-right"></i> Web Development</li>
-                  </ul>
-                </li>
-              </ul>
+              <p>Earned a Bachelor of Science in Computer Science with a concentration in Software Engineering, focusing on software design, secure coding, reverse engineering, and UI/UX development. Gained hands-on experience applying systematic and user-centered approaches to build reliable, high-quality software solutions.</p>
             </div>
           </div>
         </div>
 
         <div class="education-card">
           <div class="education-header">
-            <div class="degree-type"><i class="fas fa-award"></i> Associate of Science</div>
-            <div class="education-date"><i class="far fa-calendar-alt"></i> Jan 2022 – Jan 2024</div>
+            <div class="degree-type"><i class="fas fa-award"></i> Associate's Degree</div>
+            <div class="education-date"><i class="far fa-calendar-alt"></i> January 2022 - January 2024</div>
           </div>
           <div class="education-content">
-            <h3><i class="fas fa-laptop-code"></i> Computer Science</h3>
+            <h3><i class="fas fa-laptop-code"></i> Computer Science - Software Engineering</h3>
             <div class="university"><i class="fas fa-university"></i> Southern New Hampshire University</div>
             <div class="education-details">
-              <ul>
-                <li><i class="fas fa-book"></i> Relevant Coursework:
-                  <ul>
-                    <li><i class="fas fa-angle-right"></i> Introduction to Programming</li>
-                    <li><i class="fas fa-angle-right"></i> Object-Oriented Programming</li>
-                    <li><i class="fas fa-angle-right"></i> Computer Architecture</li>
-                    <li><i class="fas fa-angle-right"></i> Mathematics for Computer Science</li>
-                  </ul>
-                </li>
-              </ul>
+              <p>Earned an Associate of Science in Computer Science, focusing on programming, data structures, algorithms, and system analysis. Developed strong skills in scripting, software development life cycles, and operating platforms — building a solid foundation for advanced studies and professional growth in computer science.</p>
             </div>
           </div>
         </div>
@@ -475,20 +417,20 @@
             </div>
           </div>
           <div class="clubs__data">
-            <p class="clubs__description">
-              <span class="clubs__item">
+            <ul class="clubs__list">
+              <li class="clubs__item">
                 <i class="fas fa-star"></i>
                 Selected for membership based on academic achievements and leadership potential
-              </span>
-              <span class="clubs__item">
+              </li>
+              <li class="clubs__item">
                 <i class="fas fa-graduation-cap"></i>
                 Completed leadership training program including Success Networking Team meetings
-              </span>
-              <span class="clubs__item">
+              </li>
+              <li class="clubs__item">
                 <i class="fas fa-users"></i>
                 Developed crucial leadership skills through interactive training sessions and peer networking
-              </span>
-            </p>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
