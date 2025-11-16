@@ -1672,6 +1672,21 @@ section:not(:last-of-type) {
   gap: 0.5rem;
 }
 
+/* Fix: ensure the link button does not overlap the paragraph text */
+.merit-content {
+  align-items: center;
+}
+.merit-content p {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 0.25rem;
+}
+.merit-card .btn {
+  position: relative;
+  z-index: 1;
+  margin-top: 0.25rem;
+}
+
 .merit-card .btn i {
   font-size: 1rem;
 }
