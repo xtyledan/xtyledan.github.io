@@ -54,45 +54,6 @@ function initSmoothScrolling() {
 
 // Active Navigation Highlighting based on scroll position
 function initActiveNavOnScroll() {
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.nav-link[href^="#"]');
-    
-    window.addEventListener('scroll', () => {
-        let current = '';
-        const scrollPosition = window.scrollY + 150; // Offset for fixed nav
-        const documentHeight = document.documentElement.scrollHeight;
-        const windowHeight = window.innerHeight;
-        
-        sections.forEach(section => {
-            const sectionTop = section.offsetTop;
-            const sectionHeight = section.offsetHeight;
-            
-            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
-                current = section.getAttribute('id');
-            }
-        });
-        
-        // Handle contact section when near bottom of page
-        if (scrollPosition + windowHeight >= documentHeight - 100) {
-            current = 'contact';
-        }
-        
-        navLinks.forEach(link => {
-            link.classList.remove('active');
-            if (link.getAttribute('href') === `#${current}`) {
-                link.classList.add('active');
-            }
-        });
-        
-        // Handle home section
-        if (scrollPosition < 200) {
-            navLinks.forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === '#home') {
-                    link.classList.add('active');
-                }
-            });
-        }
-    });
+    // Functionality disabled - no active highlighting on scroll
 }
 

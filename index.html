@@ -56,12 +56,14 @@
   <!-- Sticky Navigation -->
   <nav class="sticky-nav">
     <div class="nav-container">
-      <div class="nav-menu" id="nav-menu">
+        <div class="nav-menu" id="nav-menu">
         <a href="#home" class="nav-link">Home</a>
         <a href="#experience" class="nav-link">Experience</a>
         <a href="#projects" class="nav-link">Projects</a>
-        <a href="#education" class="nav-link">Education & Skills</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#skills" class="nav-link">Skills</a>
         <a href="#clubs" class="nav-link">Clubs</a>
+        <a href="#merit" class="nav-link">Merit</a>
         <a href="#contact" class="nav-link">Contact</a>
       </div>
       <div class="nav-toggle" id="nav-toggle">
@@ -82,10 +84,10 @@
         </div>
         <h1 class="hero-title">
           <span class="hero-name">Tyler Daniels</span>
-          <span class="hero-role">Building Tomorrow's Technology</span>
+          <span class="hero-role">Software Engineer | Full-Stack Developer | IT Systems Architect</span>
         </h1>
         <p class="hero-description">
-          Passionate about creating innovative solutions and building the future through code. 
+          Full-stack developer building scalable software solutions with Python, JavaScript, and modern technologies.
         </p>
         <div class="hero-stats">
           <div class="stat-item">
@@ -106,17 +108,12 @@
             <i class="fas fa-rocket"></i>
             <span>View My Projects</span>
           </a>
-          <a href="#contact" class="btn btn-secondary">
-            <i class="fas fa-envelope"></i>
-            <span>Let's Connect</span>
+          <a href="daniels-resume.pdf" class="btn btn-secondary" download="Tyler_Daniels_Resume.pdf">
+            <i class="fas fa-download"></i>
+            <span>Download Resume</span>
           </a>
         </div>
-        <div class="hero-scroll">
-          <a href="#experience" class="scroll-indicator">
-            <i class="fas fa-chevron-down"></i>
-            <span>Explore My Journey</span>
-          </a>
-        </div>
+        <!-- removed scroll indicator per request -->
       </div>
       <div class="hero-visual">
         <div class="floating-elements">
@@ -153,15 +150,18 @@
           </div>
           <div class="experience-content">
             <div class="job-description">
-              <p>Developed and implemented an inventory management system, reducing equipment allocation time by 30% and increasing uptime by 15%, which in turn enhanced overall IT resource efficiency. Designed and deployed an automated RMA tracking system, decreasing warranty repair downtime by 40% and saving 100+ monthly administrative hours.</p>
+              <p>Developed and implemented an inventory management system using Python and SQL, reducing equipment allocation time by 30% and increasing uptime by 15%, which enhanced overall IT resource efficiency. Designed and deployed an automated RMA tracking system with real-time dashboard, decreasing warranty repair downtime by 40% and saving 100+ monthly administrative hours.</p>
+            </div>
+            <div class="tech-used">
+              <strong>Tech Stack:</strong> Python, SQL, Data Analytics, Process Automation, Dashboard Development
             </div>
             <div class="job-highlights">
               <ul>
-                <li><i class="fas fa-database"></i> Inventory Management Systems</li>
-                <li><i class="fas fa-cogs"></i> Process Automation</li>
-                <li><i class="fas fa-chart-bar"></i> Performance Analytics</li>
-                <li><i class="fas fa-tools"></i> RMA Tracking Systems</li>
-                <li><i class="fas fa-dollar-sign"></i> Cost Optimization</li>
+                <li><i class="fas fa-database"></i> Inventory Management Systems (Python/SQL)</li>
+                <li><i class="fas fa-cogs"></i> Process Automation & RPA Implementation</li>
+                <li><i class="fas fa-chart-bar"></i> Performance Analytics & Reporting</li>
+                <li><i class="fas fa-tools"></i> RMA Tracking Systems Development</li>
+                <li><i class="fas fa-dollar-sign"></i> Cost Optimization ($500K+ annual savings)</li>
               </ul>
             </div>
           </div>
@@ -180,15 +180,18 @@
           </div>
           <div class="experience-content">
             <div class="job-description">
-              <p>Increased equipment uptime by 20% through implementation of predictive maintenance strategies, improving reliability and cost effectiveness. I also introduced automated data capture tools, enhancing workflow efficiency and data accuracy. We often collaborated with CALFIRE to develop rapid-response protocols and real time monitoring systems for emergency resource deployment.</p>
+              <p>Increased equipment uptime by 20% through implementation of predictive maintenance strategies using data analytics and custom scripts. Developed automated data capture tools using Python and Excel VBA, enhancing workflow efficiency and data accuracy. Collaborated with CALFIRE to build rapid-response monitoring systems for emergency resource deployment.</p>
+            </div>
+            <div class="tech-used">
+              <strong>Tech Stack:</strong> Python, VBA, Data Analytics, Monitoring Systems, API Integration
             </div>
             <div class="job-highlights">
               <ul>
-                <li><i class="fas fa-tools"></i> Predictive Maintenance</li>
-                <li><i class="fas fa-robot"></i> Automation & Data Capture</li>
-                <li><i class="fas fa-chart-line"></i> Performance Optimization</li>
-                <li><i class="fas fa-users-cog"></i> Cross-Agency Collaboration</li>
-                <li><i class="fas fa-shield-alt"></i> Emergency Response Systems</li>
+                <li><i class="fas fa-tools"></i> Predictive Maintenance Strategies</li>
+                <li><i class="fas fa-robot"></i> Automation & Data Capture (Python/VBA)</li>
+                <li><i class="fas fa-chart-line"></i> Performance Optimization & Reporting</li>
+                <li><i class="fas fa-users-cog"></i> Cross-Agency Collaboration (CALFIRE)</li>
+                <li><i class="fas fa-shield-alt"></i> Real-Time Monitoring Systems</li>
               </ul>
             </div>
           </div>
@@ -200,42 +203,26 @@
     <section id="projects" class="section">
       <h2><i class="fas fa-diagram-project"></i> Personal Projects</h2>
       
-      <!-- Project Display -->
+      <!-- Project Display (Only Featured) -->
       <div class="project-display">
-            <div class="project-card featured">
-              <div class="project-image-container">
-                <div class="project-video-container">
-                  <iframe 
-                    src="https://www.youtube.com/embed/J6-ojfRMbXk" 
-                    title="Capstone Project Walkthrough" 
-                    frameborder="0" 
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                    allowfullscreen>
-                  </iframe>
-                </div>
-                <div class="project-overlay">
-                  <div class="project-category featured">
-                <i class="fas fa-gamepad"></i>
-                <span>Game Development</span>
-                  </div>
-                </div>
-              </div>
-              <div class="project-content">
-                <div class="project-header">
+        <div class="project-card featured">
+          <!-- thumbnail removed by request -->
+          <div class="project-content">
+            <div class="project-header">
               <h3>C-OpenGL-Brick-Breaker</h3>
-                  <div class="project-tech-stack">
+              <div class="project-tech-stack">
                 <span class="tech-tag">C Programming</span>
                 <span class="tech-tag">OpenGL</span>
                 <span class="tech-tag">Game Development</span>
                 <span class="tech-tag">Graphics Programming</span>
-                  </div>
-                </div>
-                <div class="project-description">
+              </div>
+            </div>
+            <div class="project-description">
               <p><strong>Problem Solved:</strong> Developed an interactive Brick Breaker game using C programming and OpenGL graphics library, demonstrating proficiency in low-level programming, graphics rendering, and game mechanics implementation.</p>
-              <p><strong>My Role:</strong> Full-stack developer responsible for implementing game physics, collision detection, rendering pipeline, and user input handling to create an engaging gaming experience.</p>
-              <p><strong>Tech Stack:</strong> C Programming, OpenGL, Graphics Programming, Game Physics, Collision Detection, Real-time Rendering</p>
-                </div>
-                <div class="project-links">
+              <p><strong>My Role:</strong> Developer responsible for implementing game physics, collision detection, rendering pipeline, and input handling.</p>
+              <p><strong>Tech Stack:</strong> C, OpenGL, Game Physics, Collision Detection</p>
+            </div>
+            <div class="project-links">
               <a href="https://github.com/xtyledan/C-OpenGL-Brick-Breaker-CS499" target="_blank" rel="noopener" class="project-link github-link">
                 <i class="fab fa-github"></i>
                 <span>View on GitHub</span>
@@ -278,6 +265,7 @@
             <div class="university"><i class="fas fa-university"></i> Southern New Hampshire University</div>
             <div class="education-details">
               <p>Earned a Bachelor of Science in Computer Science with a concentration in Software Engineering, focusing on software design, secure coding, reverse engineering, and UI/UX development. Gained hands-on experience applying systematic and user-centered approaches to build reliable, high-quality software solutions.</p>
+              
             </div>
           </div>
         </div>
@@ -292,6 +280,7 @@
             <div class="university"><i class="fas fa-university"></i> Southern New Hampshire University</div>
             <div class="education-details">
               <p>Earned an Associate of Science in Computer Science, focusing on programming, data structures, algorithms, and system analysis. Developed strong skills in scripting, software development life cycles, and operating platforms — building a solid foundation for advanced studies and professional growth in computer science.</p>
+              
             </div>
           </div>
         </div>
@@ -324,12 +313,16 @@
               <i class="fas fa-code"></i>
               <span class="skills__name">C++</span>
             </div>
+            <div class="skills__item">
+              <i class="fas fa-code"></i>
+              <span class="skills__name">C</span>
+            </div>
           </div>
         </div>
 
         <div class="skills__content">
           <h3 class="skills__subtitle">
-            <i class="fas fa-globe"></i> Web Development
+            <i class="fas fa-globe"></i> Web & Backend Development
           </h3>
           <div class="skills__data">
             <div class="skills__item">
@@ -348,58 +341,45 @@
               <i class="fab fa-node-js"></i>
               <span class="skills__name">Node.js</span>
             </div>
+            <div class="skills__item">
+              <i class="fas fa-database"></i>
+              <span class="skills__name">Express.js</span>
+            </div>
           </div>
         </div>
 
         <div class="skills__content">
           <h3 class="skills__subtitle">
-            <i class="fas fa-tools"></i> Tools & Technologies
+            <i class="fas fa-database"></i> Databases & Data
           </h3>
           <div class="skills__data">
-            <div class="skills__item">
-              <i class="fab fa-git-alt"></i>
-              <span class="skills__name">Git</span>
-            </div>
-            <div class="skills__item">
-              <i class="fab fa-github"></i>
-              <span class="skills__name">GitHub</span>
-            </div>
             <div class="skills__item">
               <i class="fas fa-database"></i>
               <span class="skills__name">SQL</span>
             </div>
             <div class="skills__item">
-              <i class="fas fa-terminal"></i>
-              <span class="skills__name">Command Line</span>
+              <i class="fas fa-database"></i>
+              <span class="skills__name">MySQL</span>
+            </div>
+            <div class="skills__item">
+              <i class="fas fa-database"></i>
+              <span class="skills__name">PostgreSQL</span>
+            </div>
+            <div class="skills__item">
+              <i class="fas fa-leaf"></i>
+              <span class="skills__name">MongoDB</span>
+            </div>
+            <div class="skills__item">
+              <i class="fas fa-chart-bar"></i>
+              <span class="skills__name">Data Analytics</span>
             </div>
           </div>
         </div>
-
-        <div class="skills__content">
-          <h3 class="skills__subtitle">
-            <i class="fas fa-users"></i> Soft Skills
-          </h3>
-          <div class="skills__data">
-            <div class="skills__item">
-              <i class="fas fa-comments"></i>
-              <span class="skills__name">Communication</span>
-            </div>
-            <div class="skills__item">
-              <i class="fas fa-tasks"></i>
-              <span class="skills__name">Project Management</span>
-            </div>
-            <div class="skills__item">
-              <i class="fas fa-brain"></i>
-              <span class="skills__name">Problem Solving</span>
-            </div>
-            <div class="skills__item">
-              <i class="fas fa-users-gear"></i>
-              <span class="skills__name">Team Leadership</span>
-            </div>
-          </div>
-        </div>
+        
       </div>
     </section>
+
+    <!-- Certifications section removed per request -->
 
     <!-- Clubs Section -->
     <section class="section clubs" id="clubs">
@@ -431,6 +411,26 @@
                 Developed crucial leadership skills through interactive training sessions and peer networking
               </li>
             </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Merit Pages Section -->
+    <section id="merit" class="section">
+      <h2><i class="fas fa-trophy"></i> Merit Pages</h2>
+      <div class="merit-container">
+        <div class="merit-card">
+          <div class="merit-header">
+            <i class="fas fa-award"></i>
+            <h3>Tyler Daniels Merit Page</h3>
+          </div>
+          <div class="merit-content">
+            <p>View my achievements, recognitions, and professional accomplishments on my Merit Pages profile.</p>
+            <a href="https://meritpages.com/tylerdaniels" target="_blank" rel="noopener" class="btn btn-primary">
+              <i class="fas fa-external-link-alt"></i>
+              <span>Visit Merit Pages Profile</span>
+            </a>
           </div>
         </div>
       </div>

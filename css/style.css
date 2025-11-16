@@ -816,7 +816,7 @@ h2::after {
   width: 100%;
   max-width: 800px;
   height: auto;
-  min-height: 600px;
+  min-height: 0;
   display: flex;
   flex-direction: column;
   background: var(--bg-primary);
@@ -911,10 +911,10 @@ h2::after {
 
 .project-content {
   flex: 1;
-  padding: 1.5rem;
+  padding: 1rem;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: flex-start;
 }
 
 .project-header h3 {
@@ -930,7 +930,7 @@ h2::after {
   display: flex;
   flex-wrap: wrap;
   gap: 0.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 .tech-tag {
@@ -953,7 +953,7 @@ h2::after {
 
 .project-description {
   flex: 1;
-  margin-bottom: 1.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .project-description p {
@@ -1601,3 +1601,276 @@ section:not(:last-of-type) {
 .clubs__list .clubs__item:last-child {
   margin-bottom: 0;
 }
+
+/* Merit Pages Section */
+.merit-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+.merit-card {
+  background: var(--bg-primary);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--neutral-200);
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.merit-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-primary);
+}
+
+.merit-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.merit-header i {
+  font-size: 2rem;
+  color: var(--primary);
+}
+
+.merit-header h3 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  color: var(--text-primary);
+  line-height: 1.2;
+}
+
+.merit-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.merit-content p {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+.merit-card .btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.merit-card .btn i {
+  font-size: 1rem;
+}
+
+/* Education Extra Details */
+.education-extra {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--neutral-200);
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.education-extra strong {
+  color: var(--text-secondary);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* Tech Used in Experience */
+.tech-used {
+  background: rgba(37, 99, 235, 0.08);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+  font-size: 0.95rem;
+  color: var(--primary);
+  border-left: 3px solid var(--primary);
+}
+
+.tech-used strong {
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+/* Skills Level Badge */
+.skills__level {
+  font-size: 0.75rem;
+  background: var(--primary);
+  color: white;
+  padding: 0.2rem 0.5rem;
+  border-radius: 12px;
+  margin-left: auto;
+  font-weight: 600;
+  display: inline-block;
+}
+
+/* Certifications Section */
+.certifications__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.certification-card {
+  background: var(--bg-primary);
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--neutral-200);
+  position: relative;
+  overflow: hidden;
+}
+
+.certification-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: var(--gradient-secondary);
+}
+
+.certification-header {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.certification-icon {
+  font-size: 2rem;
+  color: var(--secondary);
+  flex-shrink: 0;
+}
+
+.certification-header h3 {
+  font-family: var(--font-heading);
+  font-size: 1.2rem;
+  color: var(--text-primary);
+  line-height: 1.2;
+  margin-bottom: 0.25rem;
+}
+
+.certification-issuer {
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.certification-details {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Additional Project Card Styling */
+.project-placeholder {
+  width: 100%;
+  height: 300px;
+  background: linear-gradient(135deg, var(--bg-accent) 0%, var(--bg-secondary) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  color: var(--primary);
+  opacity: 0.7;
+}
+
+/* Compact project thumbnail */
+.project-thumbnail-link {
+  display: block;
+  max-width: 360px;
+  margin: 0 auto 1rem auto;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+}
+
+.project-thumbnail-link:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.project-thumbnail {
+  display: block;
+  width: 100%;
+  height: auto;
+  background: var(--bg-accent);
+}
+
+/* Hero Contact */
+.hero-contact {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--primary);
+  text-decoration: none;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+}
+
+.contact-link:hover {
+  background: rgba(37, 99, 235, 0.1);
+  transform: translateY(-2px);
+}
+
+.contact-link i {
+  font-size: 1rem;
+}
+
+.contact-divider {
+  color: var(--neutral-300);
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .hero-contact {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+  
+  .contact-divider {
+    display: none;
+  }
+  
+  .skills__level {
+    margin-left: 0.5rem;
+  }
+  
+  .certification-header {
+    flex-direction: column;
+  }
+  
+  .certification-icon {
+    font-size: 1.5rem;
+  }
+}
+
