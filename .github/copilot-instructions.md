@@ -1,23 +1,4 @@
-# Copilot Instructions for xtyledan.github.io
-
-## Project Overview
-This is a single-page portfolio website for Tyler Daniels, showcasing professional experience, projects, education, and skills. The site was refactored from multi-page to single-page architecture to improve UX and fix navigation issues.
-
-## Architecture & Key Components
-
-### Single-Page Layout Structure
-- **`index.html`**: All content in one HTML file with section-based navigation (home, experience, projects, education, clubs, contact)
-- **Navigation Model**: Sticky fixed navbar with smooth scrolling between anchor sections (`#home`, `#experience`, etc.)
-- **Key Pattern**: All sections are `<section id="...">` elements that scroll targets for navigation links with `href="#section-id"`
-
-### Critical Features
-1. **Sticky Navigation** (`initMobileNav`, `initSmoothScrolling`, `initActiveNavOnScroll`)
-   - Mobile hamburger menu toggling with `.nav-toggle` + `.nav-menu.active` classes
-   - Active nav highlighting based on scroll position with 150px offset for fixed nav
-   - Smooth scrolling via `scrollIntoView({ behavior: 'smooth' })`
-
-2. **Hero Section** - Complex layout with floating animated icons using CSS animations (no JS animations)
-   - Stats display, call-to-action buttons, scroll indicator
+<!-- Copilot instructions removed per user request. .github directory should not be included. -->
    - Uses Font Awesome icons (CDN-loaded)
 
 3. **CSS Custom Properties** - Comprehensive color system in `:root`
