@@ -131,6 +131,11 @@ body {
   margin: 1rem;
   box-shadow: var(--shadow-xl);
   z-index: 2100;
+  /* Ensure modal content stays above OS UI (taskbars) and is scrollable when viewport is constrained */
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  padding-bottom: calc(1.5rem + env(safe-area-inset-bottom));
 }
 .modal-header h2 { margin: 0 0 0.5rem 0; font-size: 1.25rem; }
 .modal-body { display: flex; flex-direction: column; gap: 0.75rem; }

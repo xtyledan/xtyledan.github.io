@@ -197,6 +197,12 @@ function initResumeCaptcha() {
         questionEl.textContent = `Solve: ${current.q}`;
         answerEl.value = '';
         answerEl.focus();
+        // Ensure the input is visible (works around OS taskbar or mobile UI overlays)
+        try {
+            answerEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } catch (e) {
+            // ignore if not supported
+        }
         messageEl.textContent = '';
     }
 
@@ -267,6 +273,7 @@ function initResumeCaptcha() {
                     questionEl.textContent = `Solve: ${current.q}`;
                     answerEl.value = '';
                     answerEl.focus();
+                    try { answerEl.scrollIntoView({ behavior: 'smooth', block: 'center' }); } catch (e) {}
                 }
             }
         } catch (err) {
