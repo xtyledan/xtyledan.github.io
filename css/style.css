@@ -76,6 +76,33 @@ body {
   line-height: 1.6;
 }
 
+/* Skip link styles for accessibility */
+.skip-link {
+  position: absolute;
+  top: -40px;
+  left: 0;
+  background: var(--primary);
+  color: white;
+  padding: 0.5rem 1rem;
+  z-index: 1100;
+  border-radius: 0 0 6px 0;
+  text-decoration: none;
+}
+.skip-link:focus {
+  top: 0.5rem;
+}
+
+/* Visible focus styles for keyboard users */
+:focus-visible {
+  outline: 3px solid var(--secondary);
+  outline-offset: 3px;
+}
+
+.nav-toggle:focus-visible {
+  outline: 3px solid rgba(37,99,235,0.35);
+  border-radius: 6px;
+}
+
 /* Layout */
 .container {
   width: 90%;
