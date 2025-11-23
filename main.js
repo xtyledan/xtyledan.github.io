@@ -169,22 +169,30 @@ function initResumeCaptcha() {
         return Math.max(0, MAX_ATTEMPTS - attempts.length);
     }
 
-    // generate simple arithmetic captcha
-    function generateCaptcha() {
-        const a = Math.floor(Math.random() * 8) + 2; // 2..9
-        const b = Math.floor(Math.random() * 8) + 2;
-        const op = ['+','-','*'][Math.floor(Math.random() * 3)];
-        let q = `${a} ${op} ${b}`;
-        let ans;
-        switch (op) {
-            case '+': ans = a + b; break;
-            case '-': ans = a - b; break;
-            case '*': ans = a * b; break;
+    // reCAPTCHA integration
+    let widgetId = null;
+    const captchaDiv = document.getElementById('g-recaptcha');
+
+    function renderRecaptchaIfReady() {
+        try {
+            if (typeof grecaptcha !== 'undefined' && captchaDiv && widgetId === null) {
+                // render and get widget id
+                widgetId = grecaptcha.render(captchaDiv, {
+                    'sitekey': captchaDiv.getAttribute('data-sitekey'),
+                    'theme': 'light'
+                });
+                // initial scale
+                scaleRecaptcha();
+            }
+        } catch (err) {
+            console.error('reCAPTCHA render failed', err);
+            if (messageEl) messageEl.textContent = 'reCAPTCHA failed to load.';
         }
-        return { q, ans };
     }
 
-    let current = null;
+    function resetRecaptcha() {
+        try { if (typeof grecaptcha !== 'undefined' && widgetId !== null) grecaptcha.reset(widgetId); } catch (e) {}
+    }
 
     function openModal() {
         if (attemptsLeft() <= 0) {
@@ -193,25 +201,23 @@ function initResumeCaptcha() {
         }
         modal.setAttribute('aria-hidden', 'false');
         modal.classList.add('open');
-        current = generateCaptcha();
-        questionEl.textContent = `Solve: ${current.q}`;
-        answerEl.value = '';
-        answerEl.focus();
-        // Ensure the input is visible (works around OS taskbar or mobile UI overlays)
-        try {
-            answerEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        } catch (e) {
-            // ignore if not supported
-        }
         messageEl.textContent = '';
+        // ensure grecaptcha rendered
+        renderRecaptchaIfReady();
+        resetRecaptcha();
+        // focus the submit button so keyboard users can tab to the widget
+        const submit = modal.querySelector('button[type="submit"]');
+        if (submit) submit.focus();
+        // ensure widget visible
+        try { captchaDiv && captchaDiv.scrollIntoView({ behavior: 'smooth', block: 'center' }); } catch (e) {}
+        scaleRecaptcha();
     }
 
     function closeModal() {
         modal.setAttribute('aria-hidden', 'true');
         modal.classList.remove('open');
-        answerEl.value = '';
         messageEl.textContent = '';
-        current = null;
+        resetRecaptcha();
         btn.focus();
     }
 
@@ -233,10 +239,14 @@ function initResumeCaptcha() {
     form.addEventListener('submit', (e) => {
         try {
             e.preventDefault();
-            if (!current) { showMessage('No challenge generated. Please try again.'); return; }
-            const val = (answerEl.value || '').trim();
-            if (!/^-?\d+$/.test(val)) {
-                showMessage('Please enter a number.');
+            // check grecaptcha response
+            if (typeof grecaptcha === 'undefined' || widgetId === null) {
+                showMessage('reCAPTCHA not ready. Please wait a moment and try again.');
+                return;
+            }
+            const token = grecaptcha.getResponse(widgetId);
+            if (!token) {
+                showMessage('Please complete the reCAPTCHA.');
                 return;
             }
             const attempts = recordAttempt();
@@ -245,42 +255,49 @@ function initResumeCaptcha() {
                 closeModal();
                 return;
             }
-            if (Number(val) === current.ans) {
-                showMessage('Verified — starting download...', false);
-                // trigger download
-                try {
-                    const a = document.createElement('a');
-                    a.href = 'daniels-resume.pdf';
-                    a.download = 'Tyler_Daniels_Resume.pdf';
-                    document.body.appendChild(a);
-                    a.click();
-                    a.remove();
-                } catch (dlErr) {
-                    console.error('Download trigger failed', dlErr);
-                    showMessage('Download failed to start. You can access the resume directly.', true);
-                }
-                // small delay so user sees message
-                setTimeout(closeModal, 800);
-            } else {
-                const left = attemptsLeft();
-                if (left <= 0) {
-                    showMessage('Incorrect. You have reached the maximum attempts. Try again later.');
-                    closeModal();
-                } else {
-                    showMessage(`Incorrect answer. ${left} attempt(s) remaining.`);
-                    // generate new question
-                    current = generateCaptcha();
-                    questionEl.textContent = `Solve: ${current.q}`;
-                    answerEl.value = '';
-                    answerEl.focus();
-                    try { answerEl.scrollIntoView({ behavior: 'smooth', block: 'center' }); } catch (e) {}
-                }
+            // Client-side only: if grecaptcha has a token, treat as success and download
+            showMessage('Verified — starting download...', false);
+            try {
+                const a = document.createElement('a');
+                a.href = 'daniels-resume.pdf';
+                a.download = 'Tyler_Daniels_Resume.pdf';
+                document.body.appendChild(a);
+                a.click();
+                a.remove();
+            } catch (dlErr) {
+                console.error('Download trigger failed', dlErr);
+                showMessage('Download failed to start. You can access the resume directly.');
             }
+            setTimeout(() => { resetRecaptcha(); closeModal(); }, 800);
         } catch (err) {
-            console.error('Captcha submission error', err);
+            console.error('reCAPTCHA submission error', err);
             if (messageEl) messageEl.textContent = 'An unexpected error occurred.';
         }
     });
+
+    // scaling helper: scale widget to container width if needed
+    const reCaptchaNativeWidth = 304; // default widget width
+    function scaleRecaptcha() {
+        try {
+            const container = modal.querySelector('.captcha-container') || modal.querySelector('.modal-panel');
+            if (!container || !captchaDiv) return;
+            const containerWidth = container.clientWidth;
+            if (reCaptchaNativeWidth > containerWidth) {
+                const scale = containerWidth / reCaptchaNativeWidth;
+                captchaDiv.style.transform = `scale(${scale})`;
+                captchaDiv.style.transformOrigin = 'left top';
+            } else {
+                captchaDiv.style.transform = '';
+            }
+        } catch (err) { /* ignore */ }
+    }
+
+    // debounce helper
+    let resizeTimer = null;
+    window.addEventListener('resize', () => { if (resizeTimer) clearTimeout(resizeTimer); resizeTimer = setTimeout(scaleRecaptcha, 120); });
+
+    // Try render periodically until grecaptcha is available (script loads async)
+    const renderInterval = setInterval(() => { if (typeof grecaptcha !== 'undefined') { renderRecaptchaIfReady(); clearInterval(renderInterval); } }, 300);
     } catch (outerErr) {
         console.error('initResumeCaptcha failed', outerErr);
         const modal = document.getElementById('captcha-modal');
