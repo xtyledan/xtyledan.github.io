@@ -126,6 +126,7 @@ if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
 
 /* Resume CAPTCHA (client-side) */
 function initResumeCaptcha() {
+    try {
     const btn = document.getElementById('download-resume');
     const modal = document.getElementById('captcha-modal');
     const overlay = modal && modal.querySelector('.modal-overlay');
@@ -134,7 +135,13 @@ function initResumeCaptcha() {
     const answerEl = document.getElementById('captcha-answer');
     const messageEl = document.getElementById('captcha-message');
 
-    if (!btn || !modal || !form || !questionEl || !answerEl) return;
+    if (!messageEl) console.warn('Captcha: message element not found');
+
+    if (!btn || !modal || !form || !questionEl || !answerEl) {
+        console.error('Captcha: required elements missing', { btn, modal, form, questionEl, answerEl });
+        if (messageEl) messageEl.textContent = 'Verification unavailable (UI error).';
+        return;
+    }
 
     // Simple throttling: max 5 attempts per 5 minutes
     const ATTEMPT_KEY = 'resumeCaptchaAttempts';
@@ -208,7 +215,7 @@ function initResumeCaptcha() {
     }
 
     // click handlers
-    btn.addEventListener('click', (e) => { e.preventDefault(); openModal(); });
+    btn.addEventListener('click', (e) => { try { e.preventDefault(); openModal(); } catch (err) { console.error('Captcha open error', err); if (messageEl) messageEl.textContent = 'Unable to open verification UI.'; } });
     overlay && overlay.addEventListener('click', closeModal);
     modal.querySelectorAll('[data-modal-close]').forEach(el => el.addEventListener('click', closeModal));
 
@@ -218,44 +225,60 @@ function initResumeCaptcha() {
     });
 
     form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        if (!current) return;
-        const val = answerEl.value.trim();
-        if (!/^-?\d+$/.test(val)) {
-            showMessage('Please enter a number.');
-            return;
-        }
-        const attempts = recordAttempt();
-        if (attempts > MAX_ATTEMPTS) {
-            showMessage('Too many attempts. Try again later.');
-            closeModal();
-            return;
-        }
-        if (Number(val) === current.ans) {
-            showMessage('Verified — starting download...', false);
-            // trigger download
-            const a = document.createElement('a');
-            a.href = 'daniels-resume.pdf';
-            a.download = 'Tyler_Daniels_Resume.pdf';
-            document.body.appendChild(a);
-            a.click();
-            a.remove();
-            // small delay so user sees message
-            setTimeout(closeModal, 800);
-        } else {
-            const left = attemptsLeft();
-            if (left <= 0) {
-                showMessage('Incorrect. You have reached the maximum attempts. Try again later.');
-                closeModal();
-            } else {
-                showMessage(`Incorrect answer. ${left} attempt(s) remaining.`);
-                // generate new question
-                current = generateCaptcha();
-                questionEl.textContent = `Solve: ${current.q}`;
-                answerEl.value = '';
-                answerEl.focus();
+        try {
+            e.preventDefault();
+            if (!current) { showMessage('No challenge generated. Please try again.'); return; }
+            const val = (answerEl.value || '').trim();
+            if (!/^-?\d+$/.test(val)) {
+                showMessage('Please enter a number.');
+                return;
             }
+            const attempts = recordAttempt();
+            if (attempts > MAX_ATTEMPTS) {
+                showMessage('Too many attempts. Try again later.');
+                closeModal();
+                return;
+            }
+            if (Number(val) === current.ans) {
+                showMessage('Verified — starting download...', false);
+                // trigger download
+                try {
+                    const a = document.createElement('a');
+                    a.href = 'daniels-resume.pdf';
+                    a.download = 'Tyler_Daniels_Resume.pdf';
+                    document.body.appendChild(a);
+                    a.click();
+                    a.remove();
+                } catch (dlErr) {
+                    console.error('Download trigger failed', dlErr);
+                    showMessage('Download failed to start. You can access the resume directly.', true);
+                }
+                // small delay so user sees message
+                setTimeout(closeModal, 800);
+            } else {
+                const left = attemptsLeft();
+                if (left <= 0) {
+                    showMessage('Incorrect. You have reached the maximum attempts. Try again later.');
+                    closeModal();
+                } else {
+                    showMessage(`Incorrect answer. ${left} attempt(s) remaining.`);
+                    // generate new question
+                    current = generateCaptcha();
+                    questionEl.textContent = `Solve: ${current.q}`;
+                    answerEl.value = '';
+                    answerEl.focus();
+                }
+            }
+        } catch (err) {
+            console.error('Captcha submission error', err);
+            if (messageEl) messageEl.textContent = 'An unexpected error occurred.';
         }
     });
+    } catch (outerErr) {
+        console.error('initResumeCaptcha failed', outerErr);
+        const modal = document.getElementById('captcha-modal');
+        const messageEl = modal && modal.querySelector('#captcha-message');
+        if (messageEl) messageEl.textContent = 'Verification temporarily unavailable.';
+    }
 }
 
