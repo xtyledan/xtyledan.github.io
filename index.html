@@ -113,10 +113,10 @@
             <i class="fas fa-rocket"></i>
             <span>View My Projects</span>
           </a>
-          <a href="daniels-resume.pdf" class="btn btn-secondary" download="Tyler_Daniels_Resume.pdf">
+          <button id="download-resume" class="btn btn-secondary" aria-haspopup="dialog" aria-controls="captcha-modal">
             <i class="fas fa-download"></i>
             <span>Download Resume</span>
-          </a>
+          </button>
         </div>
         <!-- removed scroll indicator per request -->
       </div>
@@ -468,6 +468,29 @@
     <footer>
       <p>© 2025 Tyler Daniels</p>
     </footer>
+  </div>
+
+  <!-- CAPTCHA modal for resume download -->
+  <div id="captcha-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="captcha-title" aria-hidden="true">
+    <div class="modal-overlay" data-modal-close></div>
+    <div class="modal-panel" role="document">
+      <header class="modal-header">
+        <h2 id="captcha-title">Verify to download resume</h2>
+      </header>
+      <div class="modal-body">
+        <p id="captcha-prompt">Please solve this challenge to confirm you're human.</p>
+        <form id="captcha-form">
+          <div class="captcha-question" id="captcha-question" aria-live="polite"></div>
+          <label for="captcha-answer" class="sr-only">Captcha answer</label>
+          <input id="captcha-answer" name="captcha-answer" type="text" inputmode="numeric" autocomplete="off" required />
+          <div class="captcha-actions">
+            <button type="submit" class="btn btn-primary">Verify &amp; Download</button>
+            <button type="button" class="btn btn-secondary" data-modal-close>Cancel</button>
+          </div>
+        </form>
+        <div id="captcha-message" role="status" aria-live="polite"></div>
+      </div>
+    </div>
   </div>
 
   <!-- Load JavaScript asynchronously -->
