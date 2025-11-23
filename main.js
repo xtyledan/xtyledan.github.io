@@ -172,6 +172,11 @@ function initResumeCaptcha() {
     // reCAPTCHA integration
     let widgetId = null;
     const captchaDiv = document.getElementById('g-recaptcha');
+    // Fallback elements
+    const fallbackEl = document.getElementById('captcha-fallback');
+    const fallbackQuestionEl = document.getElementById('captcha-question');
+    const fallbackAnswerEl = document.getElementById('captcha-answer');
+    let fallbackActive = false;
 
     function renderRecaptchaIfReady() {
         try {
@@ -211,6 +216,20 @@ function initResumeCaptcha() {
         // ensure widget visible
         try { captchaDiv && captchaDiv.scrollIntoView({ behavior: 'smooth', block: 'center' }); } catch (e) {}
         scaleRecaptcha();
+        // If reCAPTCHA doesn't load within short time, enable numeric fallback for testing/local
+        setTimeout(() => {
+            if ((typeof grecaptcha === 'undefined' || widgetId === null) && fallbackEl) {
+                console.warn('reCAPTCHA not available — enabling numeric fallback');
+                fallbackActive = true;
+                fallbackEl.hidden = false;
+                if (fallbackQuestionEl) {
+                    const v = generateCaptcha();
+                    fallbackEl.dataset.answer = v.ans;
+                    fallbackQuestionEl.textContent = `Solve: ${v.q}`;
+                }
+                if (fallbackAnswerEl) { fallbackAnswerEl.value = ''; fallbackAnswerEl.focus(); }
+            }
+        }, 700);
     }
 
     function closeModal() {
@@ -218,6 +237,8 @@ function initResumeCaptcha() {
         modal.classList.remove('open');
         messageEl.textContent = '';
         resetRecaptcha();
+        // hide fallback when closing
+        if (fallbackEl) { fallbackEl.hidden = true; fallbackActive = false; }
         btn.focus();
     }
 
@@ -239,35 +260,42 @@ function initResumeCaptcha() {
     form.addEventListener('submit', (e) => {
         try {
             e.preventDefault();
-            // check grecaptcha response
-            if (typeof grecaptcha === 'undefined' || widgetId === null) {
-                showMessage('reCAPTCHA not ready. Please wait a moment and try again.');
-                return;
-            }
-            const token = grecaptcha.getResponse(widgetId);
-            if (!token) {
-                showMessage('Please complete the reCAPTCHA.');
-                return;
-            }
             const attempts = recordAttempt();
             if (attempts > MAX_ATTEMPTS) {
                 showMessage('Too many attempts. Try again later.');
                 closeModal();
                 return;
             }
+
+            // If fallback is active, validate numeric answer
+            if (fallbackActive) {
+                const ans = (fallbackAnswerEl && (fallbackAnswerEl.value || '').trim()) || '';
+                if (!/^-?\d+$/.test(ans)) { showMessage('Please enter a number.'); return; }
+                const expected = Number(fallbackEl && fallbackEl.dataset && fallbackEl.dataset.answer);
+                if (Number(ans) === expected) {
+                    showMessage('Verified — starting download...', false);
+                    try { const a = document.createElement('a'); a.href = 'daniels-resume.pdf'; a.download = 'Tyler_Daniels_Resume.pdf'; document.body.appendChild(a); a.click(); a.remove(); } catch (dlErr) { console.error('Download trigger failed', dlErr); showMessage('Download failed to start. You can access the resume directly.'); }
+                    setTimeout(() => { closeModal(); }, 800);
+                } else {
+                    const left = attemptsLeft();
+                    if (left <= 0) { showMessage('Incorrect. You have reached the maximum attempts. Try again later.'); closeModal(); }
+                    else { showMessage(`Incorrect answer. ${left} attempt(s) remaining.`); fallbackAnswerEl && fallbackAnswerEl.focus(); }
+                }
+                return;
+            }
+
+            // Otherwise use grecaptcha token if available
+            if (typeof grecaptcha === 'undefined' || widgetId === null) {
+                showMessage('reCAPTCHA not ready. Please wait a moment or try the fallback.');
+                console.warn('grecaptcha not ready', { grecaptcha, widgetId });
+                return;
+            }
+            const token = grecaptcha.getResponse(widgetId);
+            if (!token) { showMessage('Please complete the reCAPTCHA.'); return; }
+
             // Client-side only: if grecaptcha has a token, treat as success and download
             showMessage('Verified — starting download...', false);
-            try {
-                const a = document.createElement('a');
-                a.href = 'daniels-resume.pdf';
-                a.download = 'Tyler_Daniels_Resume.pdf';
-                document.body.appendChild(a);
-                a.click();
-                a.remove();
-            } catch (dlErr) {
-                console.error('Download trigger failed', dlErr);
-                showMessage('Download failed to start. You can access the resume directly.');
-            }
+            try { const a = document.createElement('a'); a.href = 'daniels-resume.pdf'; a.download = 'Tyler_Daniels_Resume.pdf'; document.body.appendChild(a); a.click(); a.remove(); } catch (dlErr) { console.error('Download trigger failed', dlErr); showMessage('Download failed to start. You can access the resume directly.'); }
             setTimeout(() => { resetRecaptcha(); closeModal(); }, 800);
         } catch (err) {
             console.error('reCAPTCHA submission error', err);

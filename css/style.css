@@ -148,6 +148,11 @@ body {
 .captcha-actions .btn { padding: 0.6rem 1rem; }
 .sr-only { position: absolute !important; height: 1px; width: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px); white-space: nowrap; }
 
+/* Numeric fallback UI */
+.captcha-fallback { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.5rem; }
+.captcha-fallback input { padding: 0.6rem 0.75rem; border-radius: 8px; border: 1px solid var(--neutral-200); }
+.captcha-fallback[hidden] { display: none !important; }
+
 /* scaling helper note: we will scale .g-recaptcha via inline transform from JS when needed */
 
 /* Layout */

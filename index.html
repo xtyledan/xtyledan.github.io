@@ -482,6 +482,12 @@
         <div class="captcha-container">
           <form id="captcha-form">
             <div class="g-recaptcha" id="g-recaptcha" data-sitekey="6Le53RUUAAAAAGyChlQ0QhnPO8FXEFRzskMCofVR"></div>
+            <!-- Fallback numeric captcha (hidden by default) -->
+            <div id="captcha-fallback" class="captcha-fallback" hidden>
+              <div id="captcha-question" class="captcha-question" aria-live="polite"></div>
+              <label for="captcha-answer" class="sr-only">Captcha answer</label>
+              <input id="captcha-answer" name="captcha-answer" type="text" inputmode="numeric" autocomplete="off" />
+            </div>
             <div class="captcha-actions">
               <button type="submit" class="btn btn-primary">Verify &amp; Download</button>
               <button type="button" class="btn btn-secondary" data-modal-close>Cancel</button>
