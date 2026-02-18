@@ -263,6 +263,7 @@ header {
   text-align: center;
   position: relative;
   z-index: 2;
+  animation: fadeInUp 1s ease-out;
 }
 
 .hero-badge {
@@ -277,6 +278,7 @@ header {
   font-weight: 500;
   margin-bottom: 1.5rem;
   border: 1px solid rgba(37, 99, 235, 0.2);
+  animation: slideInDown 0.6s ease-out;
 }
 
 .hero-badge i {
@@ -326,6 +328,19 @@ header {
 
 .stat-item {
   text-align: center;
+  animation: scaleIn 0.8s ease-out forwards;
+}
+
+.stat-item:nth-child(1) {
+  animation-delay: 0.2s;
+}
+
+.stat-item:nth-child(2) {
+  animation-delay: 0.4s;
+}
+
+.stat-item:nth-child(3) {
+  animation-delay: 0.6s;
 }
 
 .stat-number {
@@ -360,6 +375,12 @@ header {
   font-weight: 600;
   border-radius: 30px;
   transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+}
+
+.hero-buttons .btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.5);
 }
 
 .hero-buttons .btn i {
@@ -468,6 +489,59 @@ header {
   }
   50% {
     transform: translateY(-20px) rotate(180deg);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
+  }
+  50% {
+    box-shadow: 0 4px 25px rgba(37, 99, 235, 0.6);
   }
 }
 
@@ -645,6 +719,18 @@ h2::after {
   font-weight: 500;
   color: var(--primary);
   margin-bottom: 0.5rem;
+}
+
+.company-name a {
+  color: var(--primary);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-bottom: 1px solid transparent;
+}
+
+.company-name a:hover {
+  text-decoration: underline;
+  color: var(--primary-light);
 }
 
 .experience-date {
@@ -1942,6 +2028,132 @@ section:not(:last-of-type) {
 
 .contact-divider {
   color: var(--neutral-300);
+}
+
+/* Summary Section */
+.summary-content {
+  background: var(--bg-primary);
+  padding: 2rem;
+  border-radius: 8px;
+  border: 2px solid var(--primary);
+  box-shadow: 0 0 30px rgba(37, 99, 235, 0.4);
+}
+
+.summary-content p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: var(--text-primary);
+}
+
+/* Expertise Chips */
+.expertise-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.chip {
+  display: inline-block;
+  background: var(--gradient-primary);
+  color: white;
+  padding: 0.75rem 1.25rem;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s ease;
+}
+
+.chip:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-lg);
+}
+
+/* Proficiencies Grid */
+.proficiencies-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-top: 1rem;
+}
+
+.proficiency-category {
+  background: var(--bg-primary);
+  padding: 1.5rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow-md);
+  border-top: 3px solid var(--primary);
+  transition: all 0.3s ease;
+}
+
+.proficiency-category:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.proficiency-category h3 {
+  color: var(--primary);
+  margin-bottom: 0.75rem;
+  font-size: 1.1rem;
+}
+
+.proficiency-category p {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Academic Project Card */
+.academic-project-card {
+  background: var(--bg-primary);
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: var(--shadow-md);
+  border: 2px solid var(--secondary);
+  box-shadow: 0 0 30px rgba(249, 115, 22, 0.4);
+}
+
+.academic-project-card h3 {
+  color: var(--text-primary);
+  margin-bottom: 0.5rem;
+  font-size: 1.3rem;
+}
+
+.project-date {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.academic-project-card ul {
+  list-style-position: inside;
+  padding-left: 0;
+  margin: 0;
+}
+
+.academic-project-card li {
+  color: var(--text-primary);
+  margin-bottom: 1rem;
+  line-height: 1.7;
+  list-style-type: disc;
+  padding-left: 1rem;
+}
+
+/* Experience Location */
+.experience-location {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  margin: 0.25rem 0;
+}
+
+/* Education Status */
+.education-status {
+  color: var(--success);
+  font-weight: 600;
+  margin-top: 0.5rem;
+  display: inline-block;
+  font-size: 0.9rem;
 }
 
 /* Mobile Responsive */
