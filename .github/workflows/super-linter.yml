@@ -1,5 +1,10 @@
 name: Super Linter
 
+permissions:
+  contents: read
+  statuses: write
+  checks: write
+
 on:
   pull_request:
   push:
