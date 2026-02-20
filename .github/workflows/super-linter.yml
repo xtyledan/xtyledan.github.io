@@ -24,9 +24,12 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           VALIDATE_ALL_CODEBASE: false
           VALIDATE_JAVASCRIPT_ES: true
-          VALIDATE_TYPESCRIPT_ES: true
           VALIDATE_CSS: true
           VALIDATE_HTML: true
           VALIDATE_JSON: true
           VALIDATE_MARKDOWN: true
           VALIDATE_YAML: true
+          LINTER_RULES_PATH: /
+          JAVASCRIPT_ES_CONFIG_FILE: .eslintrc.json
+          HTML_FILE_NAME: .htmlhintrc
+          FILTER_REGEX_EXCLUDE: .*Images/.*|.*daniels-resume\.pdf

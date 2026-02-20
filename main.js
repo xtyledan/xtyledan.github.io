@@ -125,6 +125,28 @@ if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
 }
 
 /* Resume CAPTCHA (client-side) */
+function generateCaptcha() {
+    const a = Math.floor(Math.random() * 20) + 1;
+    const b = Math.floor(Math.random() * 20) + 1;
+    const ops = ['+', '-', '*'];
+    const op = ops[Math.floor(Math.random() * ops.length)];
+    let ans = 0;
+    let q = '';
+    
+    if (op === '+') {
+        ans = a + b;
+        q = `${a} + ${b}`;
+    } else if (op === '-') {
+        ans = a - b;
+        q = `${a} - ${b}`;
+    } else {
+        ans = a * b;
+        q = `${a} × ${b}`;
+    }
+    
+    return { q, ans };
+}
+
 function initResumeCaptcha() {
     try {
     const btn = document.getElementById('download-resume');
