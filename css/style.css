@@ -53,6 +53,41 @@
   /* Typography */
   --font-heading: 'Playfair Display', serif;
   --font-body: 'Roboto', sans-serif;
+
+  /* Dark Mode Toggle */
+  --toggle-bg: var(--neutral-200);
+  --toggle-thumb: #ffffff;
+}
+
+/* Dark Mode Variables */
+[data-theme="dark"] {
+  --bg-primary: #1e1e2e;
+  --bg-secondary: #181825;
+  --bg-accent: #2a2a3e;
+
+  --text-primary: #cdd6f4;
+  --text-secondary: #bac2de;
+  --text-muted: #a6adc8;
+  --text-light: #7f849c;
+
+  --neutral-50: #313244;
+  --neutral-100: #2a2a3e;
+  --neutral-200: #45475a;
+  --neutral-300: #585b70;
+  --neutral-400: #6c7086;
+  --neutral-500: #9399b2;
+  --neutral-600: #a6adc8;
+  --neutral-700: #bac2de;
+  --neutral-800: #cdd6f4;
+  --neutral-900: #e6e9ef;
+
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.3);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.3);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.5), 0 10px 10px -5px rgba(0, 0, 0, 0.3);
+
+  --toggle-bg: var(--primary);
+  --toggle-thumb: #ffffff;
 }
 
 
@@ -172,7 +207,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  background: rgba(255, 255, 255, 0.95);
+  background: var(--bg-primary);
   backdrop-filter: blur(10px);
   z-index: 1000;
   box-shadow: var(--shadow-md);
@@ -187,6 +222,7 @@ body {
   justify-content: center;
   align-items: center;
   height: 70px;
+  position: relative;
 }
 
 .nav-logo a {
@@ -242,6 +278,36 @@ body {
   height: 3px;
   background: var(--text-primary);
   margin: 3px 0;
+}
+
+/* Dark Mode Toggle Button */
+.dark-mode-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.4rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-secondary);
+  font-size: 1.1rem;
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: color 0.2s, background 0.2s;
+  flex-shrink: 0;
+}
+
+.dark-mode-toggle:hover {
+  color: var(--primary);
+  background: rgba(37, 99, 235, 0.1);
+}
+
+.dark-mode-toggle:focus-visible {
+  outline: 3px solid var(--secondary);
+  outline-offset: 3px;
 }
 
 /* Modern Hero Section */
@@ -1526,7 +1592,7 @@ section:not(:last-of-type) {
     left: -100%;
     top: 70px;
     flex-direction: column;
-    background-color: rgba(255, 255, 255, 0.95);
+    background-color: var(--bg-primary);
     backdrop-filter: blur(10px);
     width: 100%;
     text-align: center;

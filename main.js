@@ -8,10 +8,54 @@ document.addEventListener('DOMContentLoaded', () => {
 
 // Initialize all functionality
 function initAll() {
+    initDarkMode();
     initMobileNav();
     initSmoothScrolling();
     initActiveNavOnScroll();
     initResumeCaptcha();
+}
+
+// Dark Mode Toggle
+function initDarkMode() {
+    const btn = document.getElementById('dark-mode-toggle');
+    if (!btn) return;
+
+    const STORAGE_KEY = 'colorTheme';
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const saved = localStorage.getItem(STORAGE_KEY);
+
+    // Apply the theme: saved preference wins, then OS preference
+    const isDark = saved ? saved === 'dark' : prefersDark;
+    applyTheme(isDark);
+
+    btn.addEventListener('click', () => {
+        const currentlyDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        applyTheme(!currentlyDark);
+        try { localStorage.setItem(STORAGE_KEY, !currentlyDark ? 'dark' : 'light'); } catch (_e) { /* ignore */ }
+    });
+
+    // Sync with OS preference changes when no manual choice is saved
+    if (window.matchMedia) {
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+            if (!localStorage.getItem(STORAGE_KEY)) {
+                applyTheme(e.matches);
+            }
+        });
+    }
+
+    function applyTheme(dark) {
+        if (dark) {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            btn.setAttribute('aria-label', 'Switch to light mode');
+            btn.title = 'Switch to light mode';
+            btn.innerHTML = '<i class="fas fa-sun"></i>';
+        } else {
+            document.documentElement.removeAttribute('data-theme');
+            btn.setAttribute('aria-label', 'Switch to dark mode');
+            btn.title = 'Switch to dark mode';
+            btn.innerHTML = '<i class="fas fa-moon"></i>';
+        }
+    }
 }
 
 // Mobile Navigation
@@ -121,7 +165,7 @@ function initActiveNavOnScroll() {
 
 // Expose functions for testing environments (CommonJS)
 if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-    module.exports = { initAll, initMobileNav, initSmoothScrolling, initActiveNavOnScroll };
+    module.exports = { initAll, initDarkMode, initMobileNav, initSmoothScrolling, initActiveNavOnScroll };
 }
 
 /* Resume CAPTCHA (client-side) */
