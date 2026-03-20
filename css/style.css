@@ -103,58 +103,6 @@ body {
   border-radius: 6px;
 }
 
-/* Modal / CAPTCHA styles */
-.modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 2000;
-  align-items: center;
-  justify-content: center;
-}
-.modal.open { display: flex; }
-.modal-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.45);
-}
-.modal-panel {
-  position: relative;
-  background: var(--bg-primary);
-  border-radius: 12px;
-  padding: 1.5rem;
-  width: 90%;
-  max-width: 420px;
-  margin: 1rem;
-  box-shadow: var(--shadow-xl);
-  z-index: 2100;
-  /* Ensure modal content stays above OS UI (taskbars) and is scrollable when viewport is constrained */
-  max-height: calc(100vh - 120px);
-  overflow-y: auto;
-  -webkit-overflow-scrolling: touch;
-  padding-bottom: calc(1.5rem + env(safe-area-inset-bottom));
-}
-.modal-header h2 { margin: 0 0 0.5rem 0; font-size: 1.25rem; }
-.modal-body { display: flex; flex-direction: column; gap: 0.75rem; }
-.captcha-question { font-weight: 700; font-size: 1.1rem; }
-.captcha-actions { display: flex; gap: 0.75rem; margin-top: 0.5rem; }
-.captcha-container { max-width: 420px; margin: 0 auto; padding: 12px; }
-.g-recaptcha { transform-origin: left top; -webkit-transform-origin: left top; }
-
-/* Small adjustments to match site buttons inside modal */
-.captcha-actions .btn { padding: 0.6rem 1rem; }
-.sr-only { position: absolute !important; height: 1px; width: 1px; overflow: hidden; clip: rect(1px, 1px, 1px, 1px); white-space: nowrap; }
-
-/* Numeric fallback UI */
-.captcha-fallback { display: flex; flex-direction: column; gap: 0.5rem; margin-top: 0.5rem; }
-.captcha-fallback input { padding: 0.6rem 0.75rem; border-radius: 8px; border: 1px solid var(--neutral-200); }
-.captcha-fallback[hidden] { display: none !important; }
-
-/* scaling helper note: we will scale .g-recaptcha via inline transform from JS when needed */
-
 /* Layout */
 .container {
   width: 90%;
@@ -973,13 +921,14 @@ h2::after {
   position: relative;
   max-width: 100%;
   margin: 0 auto;
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
 }
 
 .project-display .project-card {
   width: 100%;
-  max-width: 800px;
+  max-width: none;
   height: auto;
   min-height: 0;
   display: flex;

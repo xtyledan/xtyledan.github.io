@@ -291,6 +291,31 @@
             </div>
           </div>
         </div>
+
+        <div class="project-card">
+          <div class="project-content">
+            <div class="project-header">
+              <h3>MS Computer Science Coursework</h3>
+              <div class="project-tech-stack">
+                <span class="tech-tag">Computer Science</span>
+                <span class="tech-tag">Algorithms</span>
+                <span class="tech-tag">Data Structures</span>
+                <span class="tech-tag">Coursework</span>
+              </div>
+            </div>
+            <div class="project-description">
+              <p><strong>Overview:</strong> Collection of graduate-level computer science assignments, problem solving work, and implementation exercises across core CS topics.</p>
+              <p><strong>Focus Areas:</strong> Algorithmic thinking, software design practices, and practical coding solutions built during MS coursework.</p>
+              <p><strong>Repository:</strong> Continuously updated with coursework artifacts and related project materials.</p>
+            </div>
+            <div class="project-links">
+              <a href="https://github.com/xtyledan/ms-computer-science-coursework" target="_blank" rel="noopener" class="project-link github-link">
+                <i class="fab fa-github"></i>
+                <span>View on GitHub</span>
+              </a>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -507,38 +532,6 @@
       <p>© 2025 Tyler Daniels</p>
     </footer>
   </div>
-
-  <!-- CAPTCHA modal for resume download (Google reCAPTCHA v2) -->
-  <div id="captcha-modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="captcha-title" aria-hidden="true">
-    <div class="modal-overlay" data-modal-close></div>
-    <div class="modal-panel" role="document">
-      <header class="modal-header">
-        <h2 id="captcha-title">Verify to download resume</h2>
-      </header>
-      <div class="modal-body">
-        <p id="captcha-prompt">Please complete the reCAPTCHA below to confirm you're human.</p>
-        <div class="captcha-container">
-          <form id="captcha-form">
-            <div class="g-recaptcha" id="g-recaptcha" data-sitekey="6Le53RUUAAAAAGyChlQ0QhnPO8FXEFRzskMCofVR"></div>
-            <!-- Fallback numeric captcha (hidden by default) -->
-            <div id="captcha-fallback" class="captcha-fallback" hidden>
-              <div id="captcha-question" class="captcha-question" aria-live="polite"></div>
-              <label for="captcha-answer" class="sr-only">Captcha answer</label>
-              <input id="captcha-answer" name="captcha-answer" type="text" inputmode="numeric" autocomplete="off" />
-            </div>
-            <div class="captcha-actions">
-              <button type="submit" class="btn btn-primary">Verify &amp; Download</button>
-              <button type="button" class="btn btn-secondary" data-modal-close>Cancel</button>
-            </div>
-          </form>
-        </div>
-        <div id="captcha-message" role="status" aria-live="polite"></div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Load Google reCAPTCHA -->
-  <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 
   <!-- Load JavaScript asynchronously -->
   <script src="main.js" defer></script>
