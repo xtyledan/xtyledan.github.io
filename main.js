@@ -81,14 +81,29 @@ function initActiveNavOnScroll() {
     .filter(Boolean);
 
   const updateActiveNav = () => {
-    const scrollPos = window.scrollY || window.pageYOffset || 0;
-    const offset = 180;
+    const activePoint = window.innerHeight * 0.35;
+    let activeLink = null;
+    let closestDistance = Number.POSITIVE_INFINITY;
 
     sections.forEach(({ link, section }) => {
-      const top = section.offsetTop;
-      const height = section.offsetHeight;
-      const isActive = scrollPos >= top - offset && scrollPos < top + height - offset;
-      link.classList.toggle('active', isActive);
+      const rect = section.getBoundingClientRect();
+      const isActive = rect.top <= activePoint && rect.bottom > activePoint;
+
+      if (isActive) {
+        activeLink = link;
+      } else {
+        const distance = Math.abs(rect.top - activePoint);
+        if (distance < closestDistance) {
+          closestDistance = distance;
+          if (!activeLink) {
+            activeLink = link;
+          }
+        }
+      }
+    });
+
+    sections.forEach(({ link }) => {
+      link.classList.toggle('active', link === activeLink);
     });
   };
 
