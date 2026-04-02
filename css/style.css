@@ -1737,16 +1737,6 @@ section:not(:last-of-type) {
   overflow: hidden;
 }
 
-.merit-card::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 4px;
-  background: var(--gradient-primary);
-}
-
 .merit-header {
   display: flex;
   align-items: center;
@@ -1777,6 +1767,20 @@ section:not(:last-of-type) {
   color: var(--text-muted);
   font-size: 1rem;
   line-height: 1.6;
+}
+
+.merit-badges {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+  gap: 0.75rem;
+  width: 100%;
+}
+
+.merit-badge {
+  width: 100%;
+  max-width: 120px;
+  height: auto;
+  justify-self: center;
 }
 
 .merit-card .btn {
