@@ -9,14 +9,20 @@ A modern, responsive single-page portfolio website showcasing my experience, pro
 - **Modern UI/UX** - Clean, professional design with consistent styling
 - **Mobile-friendly** - Optimized for all device sizes
 - **Performance optimized** - Efficient loading with preloaded resources
+- **Accessible navigation** - Skip link, keyboard-friendly mobile menu, focus states, and reduced-motion support
 
 ## Sections
 
 1. **Home** - Hero section with introduction and call-to-action buttons
-2. **Experience & Projects** - Work history and personal projects
-3. **Education & Skills** - Academic background and technical skills
-4. **Clubs** - Leadership and organizational involvement
-5. **Contact** - Professional social media links
+2. **Projects** - Personal projects and graduate-level coursework
+3. **Skills** - Programming, web, data, and systems capabilities
+4. **Education** - Computer science degree focus and continued coursework
+5. **Experience** - Technical support and field operations background
+6. **Certifications** - SACA and Industry 4.0 certifications
+7. **Merit** - Academic recognitions and badges
+8. **Contact** - Professional social media links
+
+The separate [capstone project page](./social.html) includes the ePortfolio walkthrough video and project focus areas.
 
 ## Technical Details
 
